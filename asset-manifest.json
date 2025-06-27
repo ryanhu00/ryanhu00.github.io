@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.448f525b.css",
-    "main.js": "/static/js/main.a93b092d.js",
+    "main.js": "/static/js/main.e7513642.js",
     "static/js/453.fa03fbbd.chunk.js": "/static/js/453.fa03fbbd.chunk.js",
     "static/media/visual_anemometry.png": "/static/media/visual_anemometry.82ecee6066cf530e1f7d.png",
     "static/media/stock_trading.jpg": "/static/media/stock_trading.9107af061b85ab9bf049.jpg",
@@ -29,11 +29,11 @@
     "static/media/Java_logo.png": "/static/media/Java_logo.6c64373d3b7415758078.png",
     "index.html": "/index.html",
     "main.448f525b.css.map": "/static/css/main.448f525b.css.map",
-    "main.a93b092d.js.map": "/static/js/main.a93b092d.js.map",
+    "main.e7513642.js.map": "/static/js/main.e7513642.js.map",
     "453.fa03fbbd.chunk.js.map": "/static/js/453.fa03fbbd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.448f525b.css",
-    "static/js/main.a93b092d.js"
+    "static/js/main.e7513642.js"
   ]
 }
