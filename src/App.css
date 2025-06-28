@@ -533,21 +533,29 @@ body.dark-mode {
   margin: 0;
 }
 
+.timeline-items-container {
+  position: relative;
+  min-height: min-content;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 20px;
+  top: 8px; 
+  height: calc(100% - 16px); 
+  width: 2px;
+  background: #e0e0e0;
+  z-index: 1;
+}
+
+.dark-mode .timeline-line {
+  background: #333;
+}
+
 .experience-timeline-content {
   position: relative;
   flex: 1;
   overflow-y: auto;
-}
-
-.experience-timeline-content::before {
-  content: '';
-  position: absolute;
-  left: 20px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: #e0e0e0;
-  z-index: 1;
 }
 
 .experience-timeline-item {
@@ -1820,6 +1828,100 @@ body.dark-mode {
   .education-timeline-degree,
   .education-timeline-details {
     font-size: 0.8rem;
+  }
+}
+
+@media (max-height: 600px) and (orientation: landscape) {
+  .about-section {
+    min-height: 150vh;
+  }
+
+  .name-text-container {
+    top: 120px;
+  }
+
+  .profile-circle-container {
+    top: 50%;
+  }
+
+  .profile-circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  :root {
+    --social-radius: 150px;
+  }
+
+  .social-circle {
+    width: 45px;
+    height: 45px;
+  }
+
+  .social-circle svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .intro-text-container {
+    top: 82vh;
+  }
+
+  .intro-text p {
+    font-size: 1.2rem;
+  }
+
+  .name-text h1 {
+    font-size: 2rem;
+  }
+
+  .resume-card-container {
+    top: 120vh;
+  }
+}
+
+@media (max-height: 450px) and (orientation: landscape) {
+  .about-section {
+    min-height: 180vh;
+  }
+
+  .name-text-container {
+    top: 100px;
+  }
+
+  .profile-circle {
+    width: 180px;
+    height: 180px;
+  }
+
+  :root {
+    --social-radius: 130px;
+  }
+
+  .social-circle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .social-circle svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .intro-text-container {
+    top: 120vh;
+  }
+
+  .intro-text p {
+    font-size: 1.1rem;
+  }
+
+  .name-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .resume-card-container {
+    top: 170vh;
   }
 }
 

@@ -575,56 +575,58 @@ const Website: React.FC = () => {
               </div>
               
               <div className="experience-timeline-content">
-                <div className="experience-timeline-item">
-                  <div className="experience-timeline-dot"></div>
-                  <div className="experience-timeline-details">
-                    <h4>Tracevision - Software Engineer Intern</h4>
-                    <p className="experience-timeline-date">April 2025 - Present</p>
-                    <p className="experience-timeline-description">Working in the Math Team on geospatial API development and production tool infrastructure.
-                      Developing scripts and pipelines to process and integrate location data for proofs-of-concept and real-world deployment in security and retail sectors.</p>
+                <div className="timeline-items-container">
+                  <div className="timeline-line"></div>
+                  <div className="experience-timeline-item">
+                    <div className="experience-timeline-dot"></div>
+                    <div className="experience-timeline-details">
+                      <h4>Tracevision - Math Team Software Engineer Intern</h4>
+                      <p className="experience-timeline-date">April 2025 - Present</p>
+                      <p className="experience-timeline-description">Working in the Math Team on geospatial API development and production tool infrastructure.
+                        Developing scripts and pipelines to process and integrate location data for proofs-of-concept and real-world deployment in security and retail sectors.</p>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="experience-timeline-item">
-                  <div className="experience-timeline-dot"></div>
-                  <div className="experience-timeline-details">
-                    <h4>Caltech Alvarez Lab - Machine Learning Researcher</h4>
-                    <p className="experience-timeline-date">February 2025 - Present</p>
-                    <p className="experience-timeline-description">Collaborating with Activision to develop methods for toxic, anomalous, and outlier player behavior detection in competitive action games. 
-                      Utilizing auto-encoders, feature subspaces, and clustering techniques to build a robust machine learning framework for detecting and addressing unusual player behavior.</p>
+                  
+                  <div className="experience-timeline-item">
+                    <div className="experience-timeline-dot"></div>
+                    <div className="experience-timeline-details">
+                      <h4>Caltech Alvarez Lab - Machine Learning Researcher</h4>
+                      <p className="experience-timeline-date">February 2025 - Present</p>
+                      <p className="experience-timeline-description">Collaborating with Activision to develop methods for toxic, anomalous, and outlier player behavior detection in competitive action games. 
+                        Utilizing auto-encoders, feature subspaces, and clustering techniques to build a robust machine learning framework for detecting and addressing unusual player behavior.</p>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="experience-timeline-item">
-                  <div className="experience-timeline-dot"></div>
-                  <div className="experience-timeline-details">
-                    <h4>Caltech - Teaching Assistant </h4>
-                    <p className="experience-timeline-date">January 2025 - Present</p>
-                    <p className="experience-timeline-description">CS21: Decidability and Tractability: Covering automata, Turing machines, decidability, time complexity reductions between computational problems, and NP-completeness. 
-                      Office hours tailored towards teaching computer science proof-writing for algorithms, focusing on problem-solving techniques, formal logic, and complexity analysis.</p>
+                  
+                  <div className="experience-timeline-item">
+                    <div className="experience-timeline-dot"></div>
+                    <div className="experience-timeline-details">
+                      <h4>Caltech - Teaching Assistant </h4>
+                      <p className="experience-timeline-date">January 2025 - Present</p>
+                      <p className="experience-timeline-description">Office hours tailored towards teaching computer science proof-writing for algorithms, focusing on problem-solving techniques, formal logic, and complexity analysis.</p>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="experience-timeline-item">
-                  <div className="experience-timeline-dot"></div>
-                  <div className="experience-timeline-details">
-                    <h4>Caltech Alvarez Lab - Machine Learning Researcher</h4>
-                    <p className="experience-timeline-date">Sep 2024 - Dec 2024</p>
-                    <p className="experience-timeline-description">Investigated the role of climate change, air pollution, and epigenetics in the aging of people with HIV in collaboration with UCLA. 
-                      Employed multiple causal machine learning models to analyze relationships between various sociodemographic, climate, and air quality factors with different measures of aging. </p>
+                  
+                  <div className="experience-timeline-item">
+                    <div className="experience-timeline-dot"></div>
+                    <div className="experience-timeline-details">
+                      <h4>Caltech Alvarez Lab - Undergraduate Researcher</h4>
+                      <p className="experience-timeline-date">April 2024 - December 2024</p>
+                      <p className="experience-timeline-description">Investigated the role of climate change, air pollution, and epigenetics in the aging of people with HIV in collaboration with UCLA. 
+                        Employed multiple causal machine learning models to analyze relationships between various sociodemographic, climate, and air quality factors with different measures of aging. </p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="experience-timeline-item">
-                  <div className="experience-timeline-dot"></div>
-                  <div className="experience-timeline-details">
-                    <h4>Caltech GALCIT Lab - Undergraduate Researcher </h4>
-                    <p className="experience-timeline-date">Dec 2024 - Feb 2025</p>
-                    <p className="experience-timeline-description">Investigated a novel method called visual anemometry that diverts from traditional approaches by taking advantage of visual cues of our environment to analyze and predict wind speed patterns.</p>
+                  <div className="experience-timeline-item">
+                    <div className="experience-timeline-dot"></div>
+                    <div className="experience-timeline-details">
+                      <h4>Caltech GALCIT Lab - Undergraduate Researcher </h4>
+                      <p className="experience-timeline-date">June 2023 - September 2023</p>
+                      <p className="experience-timeline-description">Developed a novel visual anemometry technique for estimating wind speeds from video footage of trees and vegetation.
+                        Implemented computer vision algorithms and deep learning models to track motion patterns and correlate them with wind speed measurements.</p>
+                    </div>
                   </div>
                 </div>
               </div>
-
             </div>
 
           </ResponsiveReactGridLayout>
