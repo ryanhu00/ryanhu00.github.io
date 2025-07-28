@@ -505,6 +505,20 @@ body.dark-mode {
   background: #888;
 }
 
+.dark-mode .experience-timeline-content::-webkit-scrollbar-track {
+  background: #333;
+  border-radius: 4px;
+}
+
+.dark-mode .experience-timeline-content::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 4px;
+}
+
+.dark-mode .experience-timeline-content::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
 .experience-timeline-header {
   display: flex;
   align-items: center;
@@ -633,6 +647,20 @@ body.dark-mode {
 }
 
 .education-timeline-content::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+.dark-mode .education-timeline-content::-webkit-scrollbar-track {
+  background: #333;
+  border-radius: 4px;
+}
+
+.dark-mode .education-timeline-content::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 4px;
+}
+
+.dark-mode .education-timeline-content::-webkit-scrollbar-thumb:hover {
   background: #888;
 }
 
