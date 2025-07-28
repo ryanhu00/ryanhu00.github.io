@@ -583,8 +583,9 @@ const Website: React.FC = () => {
                     <div className="experience-timeline-details">
                       <h4>Tracevision - Math Team Machine Learning Intern</h4>
                       <p className="experience-timeline-date">June 2025 - Present</p>
-                      <p className="experience-timeline-description">Working in the Math Team on basketball shot event detection using raw full-game footage.
-                        Developing preprocessing scripts to extract focused shot sequences, and deploying a hybrid RNN+CNN model for accurate classification of shot outcomes from annotated clips.</p>
+                      <p className="experience-timeline-description">Working in the Math Team on basketball shot event detection using raw full-game footage. 
+                      Developing preprocessing scripts to extract focused shot sequences. 
+                      Deploying hybrid RNN+CNN model for accurate classification of shot outcomes from annotated clips.</p>
                     </div>
                   </div>
 
