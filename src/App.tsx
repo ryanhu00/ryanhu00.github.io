@@ -477,7 +477,7 @@ const Website: React.FC = () => {
         <div className="resume-card-container">
           <div className="resume-card">
             <div className="resume-card-header">
-              <span className="resume-card-meta">Last Updated: August 2025</span>
+              <span className="resume-card-meta">Last Updated: September 2025</span>
             </div>
             <div className="resume-card-title-row">
               <div className="resume-card-title">Resume</div>
@@ -574,7 +574,11 @@ const Website: React.FC = () => {
                 <h3>Work Experience</h3>
               </div>
               
-              <div className="experience-timeline-item">
+              <div className="experience-timeline-content">
+                <div className="timeline-items-container">
+                  <div className="timeline-line"></div>
+
+                  <div className="experience-timeline-item">
                     <div className="experience-timeline-dot"></div>
                     <div className="experience-timeline-details">
                       <h4>Caltech Alvarez Lab - Machine Learning Researcher</h4>
@@ -583,10 +587,6 @@ const Website: React.FC = () => {
                         Utilizing auto-encoders, feature subspaces, and clustering techniques to build a robust machine learning framework for detecting and addressing unusual player behavior.</p>
                     </div>
                   </div>
-              
-              <div className="experience-timeline-content">
-                <div className="timeline-items-container">
-                  <div className="timeline-line"></div>
 
                   <div className="experience-timeline-item">
                     <div className="experience-timeline-dot"></div>
