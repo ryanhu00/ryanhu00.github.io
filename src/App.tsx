@@ -574,6 +574,16 @@ const Website: React.FC = () => {
                 <h3>Work Experience</h3>
               </div>
               
+              <div className="experience-timeline-item">
+                    <div className="experience-timeline-dot"></div>
+                    <div className="experience-timeline-details">
+                      <h4>Caltech Alvarez Lab - Machine Learning Researcher</h4>
+                      <p className="experience-timeline-date">February 2025 - Present</p>
+                      <p className="experience-timeline-description">Collaborating with Activision to develop methods for toxic, anomalous, and outlier player behavior detection in competitive action games. 
+                        Utilizing auto-encoders, feature subspaces, and clustering techniques to build a robust machine learning framework for detecting and addressing unusual player behavior.</p>
+                    </div>
+                  </div>
+              
               <div className="experience-timeline-content">
                 <div className="timeline-items-container">
                   <div className="timeline-line"></div>
@@ -582,7 +592,7 @@ const Website: React.FC = () => {
                     <div className="experience-timeline-dot"></div>
                     <div className="experience-timeline-details">
                       <h4>Tracevision - Math Team Machine Learning Intern</h4>
-                      <p className="experience-timeline-date">June 2025 - Present</p>
+                      <p className="experience-timeline-date">June 2025 - Sep 2025</p>
                       <p className="experience-timeline-description">Working in the Math Team on basketball shot event detection using raw full-game footage. 
                       Developing preprocessing scripts to extract focused shot sequences. 
                       Deploying hybrid RNN+CNN model for accurate classification of shot outcomes from annotated clips.</p>
@@ -593,19 +603,9 @@ const Website: React.FC = () => {
                     <div className="experience-timeline-dot"></div>
                     <div className="experience-timeline-details">
                       <h4>Tracevision - Math Team Software Engineer Intern</h4>
-                      <p className="experience-timeline-date">April 2025 - Present</p>
+                      <p className="experience-timeline-date">April 2025 - Sep 2025</p>
                       <p className="experience-timeline-description">Working in the Math Team on geospatial API development and production tool infrastructure.
                         Developing scripts and pipelines to process and integrate location data for proofs-of-concept and real-world deployment in security and retail sectors.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="experience-timeline-item">
-                    <div className="experience-timeline-dot"></div>
-                    <div className="experience-timeline-details">
-                      <h4>Caltech Alvarez Lab - Machine Learning Researcher</h4>
-                      <p className="experience-timeline-date">February 2025 - Present</p>
-                      <p className="experience-timeline-description">Collaborating with Activision to develop methods for toxic, anomalous, and outlier player behavior detection in competitive action games. 
-                        Utilizing auto-encoders, feature subspaces, and clustering techniques to build a robust machine learning framework for detecting and addressing unusual player behavior.</p>
                     </div>
                   </div>
                   
