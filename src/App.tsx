@@ -595,7 +595,7 @@ const Website: React.FC = () => {
                       <p className="experience-timeline-date">June 2025 - Sep 2025</p>
                       <p className="experience-timeline-description">Working in the Math Team on basketball shot event detection using raw full-game footage. 
                       Developing preprocessing scripts to extract focused shot sequences. 
-                      Deploying hybrid RNN+CNN model for accurate classification of shot outcomes from annotated clips.</p>
+                      Deploying hybrid CNN + Transformer model for accurate classification of shot outcomes from annotated clips.</p>
                     </div>
                   </div>
 
