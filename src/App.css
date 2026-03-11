@@ -185,14 +185,6 @@ body.dark-mode {
   color: #fff;
 }
 
-.dark-mode .home-arrow path {
-  stroke: white;
-}
-
-.dark-mode .home-arrow marker polygon {
-  fill: white;
-}
-
 .dark-mode .project-button {
   background: #000;
   color: white;
@@ -222,20 +214,38 @@ body.dark-mode {
   color: #000;
 }
 
-.profile-circle-container {
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.about-content {
+  --profile-size: clamp(180px, 25vw, 400px);
+  --social-size: clamp(44px, 5.5vw, 80px);
+  --orbit-radius: calc(var(--profile-size) / 2 + var(--social-size) / 2 + clamp(8px, 1vw, 15px));
+  --container-size: calc(2 * var(--orbit-radius) + var(--social-size));
+  --gap: clamp(0.75rem, 1.5vh, 1.5rem);
+
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  gap: var(--gap);
+  padding:
+    max(0px, calc(50vh - clamp(70px, 10vh, 100px) - 3.5rem - var(--gap) - var(--container-size) / 2))
+    1.5rem
+    clamp(1.5rem, 3vh, 2.5rem);
+}
+
+.profile-circle-container {
+  position: relative;
+  width: var(--container-size);
+  height: var(--container-size);
   z-index: 1050;
+  flex-shrink: 0;
 }
 
 .profile-circle {
-  width: 400px;
-  height: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--profile-size);
+  height: var(--profile-size);
   border: 4px solid black;
   border-radius: 50%;
   overflow: hidden;
@@ -253,50 +263,32 @@ body.dark-mode {
 }
 
 .name-text-container {
-  position: absolute;
-  left: 10vw;
-  top: 20vh;
+  text-align: center;
   z-index: 1060;
-}
-
-.home-arrow-container {
-  position: absolute;
-  left: 16vw;
-  top: 29vh;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 1055;
 }
 
 .name-text h1 {
   font-family: 'Satoshi', sans-serif;
-  font-size: 4rem;
+  font-size: clamp(2.8rem, 5vw, 4rem);
   font-weight: 700;
   color: black;
-  margin-bottom: 0.5rem;
   line-height: 1.1;
   text-shadow: 1px 1px 0 white, 2px 2px 0 #fff8;
 }
 
-.name-break {
-  display: inline;
-}
-
 .intro-text-container {
-  position: absolute;
-  left: 10vw;
-  top: 70vh;
+  text-align: center;
   z-index: 1060;
+  max-width: 600px;
+  padding: 0 1rem;
 }
 
 .intro-text p {
   font-family: 'Satoshi', sans-serif;
-  font-size: 2rem;
+  font-size: clamp(1.3rem, 2.5vw, 1.6rem);
   font-weight: 700;
   color: black;
-  margin-bottom: 0.5rem;
-  line-height: 1.1;
+  line-height: 1.4;
   text-shadow: 1px 1px 0 white, 2px 2px 0 #fff8;
 }
 
@@ -306,10 +298,6 @@ body.dark-mode {
 }
 
 .resume-card-container {
-  position: absolute;
-  left: 70vw;
-  top: 70vh;
-  transform: translateX(-50%);
   z-index: 1200;
 }
 
@@ -439,14 +427,12 @@ body.dark-mode {
 }
 
 .about-section {
-  padding-top: 120px;
-  min-height: 100vh;
-  max-height: 200vh;
+  padding-top: clamp(80px, 12vh, 120px);
   position: relative;
 }
 
 .experience-section {
-  padding-top: 80px;
+  padding-top: clamp(40px, 6vh, 80px);
   min-height: 130vh;
   position: relative;
 }
@@ -1005,7 +991,6 @@ body.dark-mode {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   width: 0;
   height: 0;
   pointer-events: none;
@@ -1013,8 +998,8 @@ body.dark-mode {
 
 .social-circle {
   position: absolute;
-  width: 90px;
-  height: 90px;
+  width: var(--social-size);
+  height: var(--social-size);
   background: white;
   border: 3px solid black;
   border-radius: 50%;
@@ -1023,56 +1008,45 @@ body.dark-mode {
   justify-content: center;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
-  transform-origin: center;
   pointer-events: auto;
   z-index: 1060;
 }
 
-:root {
-  --social-radius: 275px;
-}
-
-/* GitHub */
 .social-circle:nth-child(1) {
-  transform: translate(-50%, -50%) rotate(15deg) translateY(calc(-1 * var(--social-radius))) rotate(-15deg);
+  transform: translate(-50%, -50%) rotate(15deg) translateY(calc(-1 * var(--orbit-radius))) rotate(-15deg);
 }
-
 .social-circle:nth-child(1):hover {
-  transform: translate(-50%, -50%) rotate(15deg) translateY(calc(-1 * var(--social-radius))) rotate(-15deg) scale(1.1);
+  transform: translate(-50%, -50%) rotate(15deg) translateY(calc(-1 * var(--orbit-radius))) rotate(-15deg) scale(1.15);
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* LinkedIn */
 .social-circle:nth-child(2) {
-  transform: translate(-50%, -50%) rotate(35deg) translateY(calc(-1 * var(--social-radius))) rotate(-35deg);
+  transform: translate(-50%, -50%) rotate(35deg) translateY(calc(-1 * var(--orbit-radius))) rotate(-35deg);
 }
-
 .social-circle:nth-child(2):hover {
-  transform: translate(-50%, -50%) rotate(35deg) translateY(calc(-1 * var(--social-radius))) rotate(-35deg) scale(1.1);
+  transform: translate(-50%, -50%) rotate(35deg) translateY(calc(-1 * var(--orbit-radius))) rotate(-35deg) scale(1.15);
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* Email */
 .social-circle:nth-child(3) {
-  transform: translate(-50%, -50%) rotate(55deg) translateY(calc(-1 * var(--social-radius))) rotate(-55deg);
+  transform: translate(-50%, -50%) rotate(55deg) translateY(calc(-1 * var(--orbit-radius))) rotate(-55deg);
 }
-
 .social-circle:nth-child(3):hover {
-  transform: translate(-50%, -50%) rotate(55deg) translateY(calc(-1 * var(--social-radius))) rotate(-55deg) scale(1.1);
+  transform: translate(-50%, -50%) rotate(55deg) translateY(calc(-1 * var(--orbit-radius))) rotate(-55deg) scale(1.15);
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* X/Twitter */
 .social-circle:nth-child(4) {
-  transform: translate(-50%, -50%) rotate(75deg) translateY(calc(-1 * var(--social-radius))) rotate(-75deg);
+  transform: translate(-50%, -50%) rotate(75deg) translateY(calc(-1 * var(--orbit-radius))) rotate(-75deg);
 }
-
 .social-circle:nth-child(4):hover {
-  transform: translate(-50%, -50%) rotate(75deg) translateY(calc(-1 * var(--social-radius))) rotate(-75deg) scale(1.1);
+  transform: translate(-50%, -50%) rotate(75deg) translateY(calc(-1 * var(--orbit-radius))) rotate(-75deg) scale(1.15);
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .social-circle svg {
+  width: 55%;
+  height: 55%;
   transition: transform 0.2s;
   color: #000;
 }
@@ -1234,77 +1208,15 @@ body.dark-mode {
   transition-duration: 100ms;
 }
 
-/* Responsive Styles for Navbar and Dark Mode Toggle */
 /* ===== RESPONSIVE MEDIA QUERIES ===== */
 
 @media (max-width: 1600px) {
-  /* About Section */
-  :root {
-    --social-radius: 240px;
-  }
-  
-  .home-arrow-container {
-    display: none;
-  }
-  
-  .name-text-container {
-    left: 50%;
-    top: calc(70px + (60vh - 240px - 39px - 70px) / 2);
-    transform: translateX(-50%);
-    text-align: center;
-  }
-  
-  .profile-circle-container {
-    top: 60%;
-  }
-  
-  .name-text h1 {
-    font-size: 3.5rem;
-  }
-  
-  .name-text .name-break {
-    display: none !important;
-  }
-  
-  .intro-text-container {
-    left: 50%;
-    top: 86vh;
-    transform: translateX(-50%);
-    text-align: center;
-  }
-  
-  .intro-text p {
-    font-size: 1.8rem;
-    white-space: nowrap;
-  }
-  
-  .profile-circle {
-    width: 350px;
-    height: 350px;
-  }
-  
-  .social-circle {
-    width: 78px;
-    height: 78px;
-  }
-  
-  .social-circle svg {
-    width: 32px;
-    height: 32px;
-  }
-
   .experience-section {
     padding-top: 140px;
   }
 
   .experience-grid-container {
     padding: 1.5rem 0;
-  }
-
-  .resume-card-container {
-    left: 75vw;
-    top: 75vh;
-    transform: translateX(-50%);
   }
 
   .education-timeline-wrapper {
@@ -1328,7 +1240,6 @@ body.dark-mode {
 }
 
 @media (max-width: 1200px) {
-  /* Navbar */
   .dark-mode-toggle {
     width: 42px;
     height: 42px;
@@ -1346,10 +1257,6 @@ body.dark-mode {
     padding: 0.45rem 2.2rem 0.45rem 1rem;
   }
 
-  .intro-text-container {
-    top: 75vh;
-  }
-
   .pill-navbar-logo {
     height: 42px;
     margin-right: 1.8rem;
@@ -1364,24 +1271,12 @@ body.dark-mode {
     padding: 0.45rem 1.6rem;
   }
 
-  .intro-text-container {
-    top: 85vh;
-  }
-
   .experience-section {
-    padding-top: 220px;
+    padding-top: 120px;
   }
 
   .experience-grid-container {
     padding: 1rem 0;
-  }
-
-
-
-  .resume-card-container {
-    left: 50%;
-    top: 110vh;
-    transform: translateX(-50%);
   }
 
   .education-timeline-wrapper {
@@ -1414,7 +1309,6 @@ body.dark-mode {
 }
 
 @media (max-width: 992px) {
-  /* Navbar */
   .dark-mode-toggle {
     width: 38px;
     height: 38px;
@@ -1446,64 +1340,10 @@ body.dark-mode {
     padding: 0.4rem 1.4rem;
   }
 
-  /* About Section */
-  :root {
-    --social-radius: 206px;
-  }
-  
-  .name-text-container {
-    left: 50%;
-    top: calc(65px + (48vh - 206px - 33px - 65px) / 2);
-    transform: translateX(-50%);
-    text-align: center;
-  }
-  
-  .profile-circle-container {
-    top: 48%;
-  }
-  
-  .name-text h1 {
-    font-size: 3rem;
-  }
-  
-  .name-break {
-    display: none;
-  }
-  
-  .intro-text-container {
-    top: 68vh;
-  }
-
-  .resume-card-container {
-    left: 50%;
-    top: 90vh;
-    transform: translateX(-50%);
-  }
-  
-  .intro-text p {
-    font-size: 1.6rem;
-    white-space: nowrap;
-  }
-  
-  .profile-circle {
-    width: 300px;
-    height: 300px;
-  }
-  
-  .social-circle {
-    width: 67px;
-    height: 67px;
-  }
-  
-  .social-circle svg {
-    width: 28px;
-    height: 28px;
-  }
-  
   .resume-card {
     min-width: 280px;
   }
-  
+
   .resume-card-title {
     font-size: 2rem;
   }
@@ -1648,7 +1488,6 @@ body.dark-mode {
 }
 
 @media (max-width: 768px) {
-  /* Navbar */
   .dark-mode-toggle {
     width: 34px;
     height: 34px;
@@ -1680,65 +1519,10 @@ body.dark-mode {
     padding: 0.35rem 1.2rem;
   }
 
-  /* About Section */
-  :root {
-    --social-radius: 172px;
-  }
-  
-  .name-text-container {
-    left: 50%;
-    top: calc(55px + (55vh - 172px - 28px - 55px) / 2);
-    transform: translateX(-50%);
-    text-align: center;
-  }
-  
-  .profile-circle-container {
-    top: 55%;
-  }
-  
-  .name-text h1 {
-    white-space: nowrap;
-    font-size: 2.5rem;
-  }
-  
-  .name-break {
-    display: none;
-  }
-  
-  .intro-text-container {
-    top: 75vh;
-  }
-  
-  .intro-text p {
-    white-space: nowrap;
-    font-size: 1.4rem;
-  }
-  
-  .profile-circle {
-    width: 250px;
-    height: 250px;
-  }
-  
-  .social-circle {
-    width: 56px;
-    height: 56px;
-  }
-  
-  .social-circle svg {
-    width: 24px;
-    height: 24px;
-  }
-  
-  .resume-card-container {
-    left: 50%;
-    top: 95vh;
-    transform: translateX(-50%);
-  }
-  
   .resume-card-title {
     font-size: 1.8rem;
   }
-  
+
   .resume-card-meta {
     font-size: 0.9rem;
   }
@@ -1763,56 +1547,53 @@ body.dark-mode {
     font-size: 1.5rem;
   }
 
-
-
   .projects-section {
     padding: 4rem 1rem 3rem 1rem;
   }
-  
+
   .project-image-container {
     height: 50%;
   }
-  
+
   .project-text-content {
     padding: 1rem;
   }
-  
+
   .project-card-content h3 {
     font-size: 1.2rem;
   }
-  
+
   .project-card-content p {
     font-size: 0.85rem;
   }
-  
+
   .project-buttons {
     gap: 0.5rem;
     margin-top: 0.75rem;
   }
-  
+
   .project-button {
     padding: 0.6rem 1rem;
     font-size: 0.85rem;
   }
 
-  /* Footer */
   .footer-section {
     padding: 3rem 1rem 1.5rem 1rem;
   }
-  
+
   .footer-social-circles {
     gap: 1.5rem;
   }
-  
+
   .footer-social-circle svg {
     width: 28px;
     height: 28px;
   }
-  
+
   .footer-description {
     font-size: 0.9rem;
   }
-  
+
   .footer-copyright {
     font-size: 0.85rem;
   }
@@ -1856,100 +1637,6 @@ body.dark-mode {
   .education-timeline-degree,
   .education-timeline-details {
     font-size: 0.8rem;
-  }
-}
-
-@media (max-height: 600px) and (orientation: landscape) {
-  .about-section {
-    min-height: 150vh;
-  }
-
-  .name-text-container {
-    top: 120px;
-  }
-
-  .profile-circle-container {
-    top: 50%;
-  }
-
-  .profile-circle {
-    width: 200px;
-    height: 200px;
-  }
-
-  :root {
-    --social-radius: 150px;
-  }
-
-  .social-circle {
-    width: 45px;
-    height: 45px;
-  }
-
-  .social-circle svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  .intro-text-container {
-    top: 82vh;
-  }
-
-  .intro-text p {
-    font-size: 1.2rem;
-  }
-
-  .name-text h1 {
-    font-size: 2rem;
-  }
-
-  .resume-card-container {
-    top: 120vh;
-  }
-}
-
-@media (max-height: 450px) and (orientation: landscape) {
-  .about-section {
-    min-height: 180vh;
-  }
-
-  .name-text-container {
-    top: 100px;
-  }
-
-  .profile-circle {
-    width: 180px;
-    height: 180px;
-  }
-
-  :root {
-    --social-radius: 130px;
-  }
-
-  .social-circle {
-    width: 40px;
-    height: 40px;
-  }
-
-  .social-circle svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  .intro-text-container {
-    top: 120vh;
-  }
-
-  .intro-text p {
-    font-size: 1.1rem;
-  }
-
-  .name-text h1 {
-    font-size: 1.8rem;
-  }
-
-  .resume-card-container {
-    top: 170vh;
   }
 }
 
