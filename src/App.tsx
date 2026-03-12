@@ -452,7 +452,8 @@ const Website: React.FC = () => {
           {/* Intro Text */}
           <div className="intro-text-container">
             <div className="intro-text">
-              <p>Currently Studying @ <span className="caltech-orange">Caltech</span>. Pursuing a BS in Computer Science with a minor in Mathematics. Passionate about AI/Machine Learning and Software Engineering. Looking for 2026 Internships.</p>
+              <p>Currently Studying @ <span className="caltech-orange">Caltech</span>. Pursuing a BS in CS. Currently, my interests lie in Software Engineering, AI/ML, and general problem-solving. 
+              I'm also passionate about basketball (formerly on the NCAA D3 Men's Team), music, and philosophy.</p>
             </div>
           </div>
 
@@ -460,7 +461,7 @@ const Website: React.FC = () => {
           <div className="resume-card-container">
             <div className="resume-card">
               <div className="resume-card-header">
-                <span className="resume-card-meta">Last Updated: September 2025</span>
+                <span className="resume-card-meta">Last Updated: March 2026</span>
               </div>
               <div className="resume-card-title-row">
                 <div className="resume-card-title">Resume</div>
@@ -565,10 +566,28 @@ const Website: React.FC = () => {
                   <div className="experience-timeline-item">
                     <div className="experience-timeline-dot"></div>
                     <div className="experience-timeline-details">
+                      <h4>Amazon - Software Development Engineer Intern</h4>
+                      <p className="experience-timeline-date">June 2026 - September 2026</p>
+                      <p className="experience-timeline-description">Incoming Summer 2026. Working on the Amazon Stores Team.</p>
+                    </div>
+                  </div>
+
+                  <div className="experience-timeline-item">
+                    <div className="experience-timeline-dot"></div>
+                    <div className="experience-timeline-details">
                       <h4>Caltech Alvarez Lab - Machine Learning Researcher</h4>
                       <p className="experience-timeline-date">February 2025 - Present</p>
                       <p className="experience-timeline-description">Collaborating with Activision to develop methods for toxic, anomalous, and outlier player behavior detection in competitive action games. 
                         Utilizing auto-encoders, feature subspaces, and clustering techniques to build a robust machine learning framework for detecting and addressing unusual player behavior.</p>
+                    </div>
+                  </div>
+
+                  <div className="experience-timeline-item">
+                    <div className="experience-timeline-dot"></div>
+                    <div className="experience-timeline-details">
+                      <h4>Caltech - Teaching Assistant for CS/CNS/EE 155</h4>
+                      <p className="experience-timeline-date">January 2026 - March 2026</p>
+                      <p className="experience-timeline-description">Office hours tailored toward teaching machine learning and data mining concepts, focusing on probabilistic modeling, optimization techniques, and practical implementation of ML algorithms.</p>
                     </div>
                   </div>
 
@@ -596,8 +615,8 @@ const Website: React.FC = () => {
                   <div className="experience-timeline-item">
                     <div className="experience-timeline-dot"></div>
                     <div className="experience-timeline-details">
-                      <h4>Caltech - Teaching Assistant </h4>
-                      <p className="experience-timeline-date">January 2025 - Present</p>
+                      <h4>Caltech - Teaching Assistant for CS21</h4>
+                      <p className="experience-timeline-date">January 2025 - March 2025</p>
                       <p className="experience-timeline-description">Office hours tailored towards teaching computer science proof-writing for algorithms, focusing on problem-solving techniques, formal logic, and complexity analysis.</p>
                     </div>
                   </div>
@@ -824,7 +843,7 @@ const Website: React.FC = () => {
             Website built with <strong>React.js</strong> and <strong>TypeScript</strong>. Experience and project section layouts based on <strong>React-Grid-Layout</strong>. 
             <br></br>Background inspired by <strong>crnacura's <a href="https://github.com/crnacura/AmbientCanvasBackgrounds" style={{ color: isDarkMode ? 'white' : 'black' }}> AmbientCanvasBackgrounds </a></strong>. </p>
           <p className="footer-copyright">
-            <strong>© 2025 Ryan R. Hu.</strong>
+            <strong>© 2026 Ryan R. Hu.</strong>
           </p>
         </div>
       </footer>
