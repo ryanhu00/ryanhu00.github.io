@@ -520,9 +520,9 @@ const Website: React.FC = () => {
                       <div className="education-timeline-text-box education-timeline-text-box-top">
                         <h4>California Institute of Technology (Caltech)</h4>
                         <p className="education-timeline-date">2023 - 2027</p>
-                        <p className="education-timeline-degree"><i>Bachelor of Science in Computer Science, Minor in Mathematics - 4.2/4.0 GPA</i></p>
-                        <p className="education-timeline-details"> <u>Relevant Coursework:</u> Computer Programming, Programming Methods, Software Design, Deep Learning, Learning Systems, Machine Learning & Data Mining, Decidability and Tractability, Algorithms, Computing Systems, Differential Equations, Probability and Statistics, Calculus of One and Several Variables and Linear Algebra</p>
-                        <p className="education-timeline-details"> <u>Activities:</u> NCAA D3 Men's Basketball, Peer Academic Coach </p>
+                        <p className="education-timeline-degree"><i>Bachelor of Science in Computer Science - 4.2/4.0 GPA</i></p>
+                        <p className="education-timeline-details"> <u>Relevant Coursework:</u> Computer Programming, Programming Methods, Software Design, Deep Learning, Learning Systems, Machine Learning & Data Mining, 3D Deep Learning, GPU Programming, Statistical Inference, Bayesian Statistics, Decidability and Tractability, Algorithms, Computing Systems, Differential Equations, Probability and Statistics</p>
+                        <p className="education-timeline-details"> <u>Activities:</u> NCAA D3 Men's Basketball, Peer Academic Coach, Hacktech Organizer </p>
         
                       </div>
                     </div>
