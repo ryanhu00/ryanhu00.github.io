@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.a299f247.css",
-    "main.js": "/static/js/main.f4f16cda.js",
+    "main.css": "/static/css/main.44b01e80.css",
+    "main.js": "/static/js/main.5f853e50.js",
     "static/js/453.fa03fbbd.chunk.js": "/static/js/453.fa03fbbd.chunk.js",
     "static/media/visual_anemometry.png": "/static/media/visual_anemometry.82ecee6066cf530e1f7d.png",
     "static/media/stock_trading.jpg": "/static/media/stock_trading.9107af061b85ab9bf049.jpg",
@@ -28,12 +28,12 @@
     "static/media/Javascript_logo.png": "/static/media/Javascript_logo.266bd9fb2663dcc057b4.png",
     "static/media/Java_logo.png": "/static/media/Java_logo.6c64373d3b7415758078.png",
     "index.html": "/index.html",
-    "main.a299f247.css.map": "/static/css/main.a299f247.css.map",
-    "main.f4f16cda.js.map": "/static/js/main.f4f16cda.js.map",
+    "main.44b01e80.css.map": "/static/css/main.44b01e80.css.map",
+    "main.5f853e50.js.map": "/static/js/main.5f853e50.js.map",
     "453.fa03fbbd.chunk.js.map": "/static/js/453.fa03fbbd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a299f247.css",
-    "static/js/main.f4f16cda.js"
+    "static/css/main.44b01e80.css",
+    "static/js/main.5f853e50.js"
   ]
 }
