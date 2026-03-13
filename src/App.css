@@ -225,10 +225,9 @@ body.dark-mode {
   flex-direction: column;
   align-items: center;
   gap: var(--gap);
-  padding:
-    max(0px, calc(50vh - clamp(70px, 10vh, 100px) - 3.5rem - var(--gap) - var(--container-size) / 2))
-    1.5rem
-    clamp(1.5rem, 3vh, 2.5rem);
+  padding: 0 1.5rem clamp(1.5rem, 3vh, 2.5rem);
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .profile-circle-container {
@@ -281,6 +280,8 @@ body.dark-mode {
   z-index: 1060;
   max-width: 600px;
   padding: 0 1rem;
+  /* Pull intro text closer to image on large screens, relax on smaller ones */
+  margin-top: clamp(-1.5rem, -3vh, -3rem);
 }
 
 .intro-text p {
@@ -299,6 +300,8 @@ body.dark-mode {
 
 .resume-card-container {
   z-index: 1200;
+  display: flex;
+  text-align: center;
 }
 
 .resume-card {
@@ -310,12 +313,14 @@ body.dark-mode {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+  align-items: center;
 }
 
 .resume-card-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
+  width: 100%;
 }
 
 .resume-card-meta {
@@ -324,14 +329,19 @@ body.dark-mode {
   font-family: 'Satoshi', sans-serif;
   font-weight: 400;
   margin-bottom: 0.1rem;
+  text-align: center;
+  width: 100%;
 }
 
 .resume-card-title-row {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
+  justify-content: center;
+  gap: 1.2rem;
   margin-top: 0.1rem;
   margin-bottom: 0.1rem;
+  text-align: center;
+  width: 100%;
 }
 
 .resume-card-title {
@@ -340,16 +350,20 @@ body.dark-mode {
   font-family: 'Satoshi', sans-serif;
   font-weight: 600;
   margin: 0;
+  text-align: center;
 }
 
 .resume-card-icons {
   display: flex;
   gap: 1.2rem;
   align-items: center;
+  justify-content: center;
 }
 
 .resume-card-icons svg {
   cursor: pointer;
+  width: 2.2rem;
+  height: 2.2rem;
   transition: transform 0.15s, filter 0.15s;
 }
 
@@ -427,8 +441,11 @@ body.dark-mode {
 }
 
 .about-section {
-  padding-top: clamp(80px, 12vh, 120px);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   position: relative;
+  padding-top: 100px;
 }
 
 .experience-section {
@@ -1271,6 +1288,10 @@ body.dark-mode {
     padding: 0.45rem 1.6rem;
   }
 
+  .about-section {
+    padding-top: 90px;
+  }
+
   .experience-section {
     padding-top: 120px;
   }
@@ -1338,6 +1359,10 @@ body.dark-mode {
   .pill-navbar-link {
     font-size: 1.1rem;
     padding: 0.4rem 1.4rem;
+  }
+
+  .about-section {
+    padding-top: 80px;
   }
 
   .resume-card {
@@ -1525,6 +1550,10 @@ body.dark-mode {
 
   .resume-card-meta {
     font-size: 0.9rem;
+  }
+
+  .about-section {
+    padding-top: 70px;
   }
 
   .experience-section {

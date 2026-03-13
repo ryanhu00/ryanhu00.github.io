@@ -467,10 +467,10 @@ const Website: React.FC = () => {
                 <div className="resume-card-title">Resume</div>
                 <div className="resume-card-icons">
                   <a href="/Ryan_Hu_Resume.pdf" target="_blank" rel="noopener noreferrer" title="View Resume">
-                    <svg width="32" height="32" fill="none" stroke="#bb80e0" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <svg width="32" height="32" fill="none" stroke="#bb80e0" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><line x1="22" y1="21" x2="17.65" y2="16.65"/></svg>
                   </a>
                   <a href="/Ryan_Hu_Resume.pdf" download title="Download Resume">
-                    <svg width="32" height="32" fill="none" stroke="#bb80e0" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+                    <svg width="32" height="32" fill="none" stroke="#bb80e0" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M12 5v16M19 14l-7 7-7-7"/></svg>
                   </a>
                 </div>
               </div>
