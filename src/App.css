@@ -219,15 +219,14 @@ body.dark-mode {
   --social-size: clamp(44px, 5.5vw, 80px);
   --orbit-radius: calc(var(--profile-size) / 2 + var(--social-size) / 2 + clamp(8px, 1vw, 15px));
   --container-size: calc(2 * var(--orbit-radius) + var(--social-size));
-  --gap: clamp(0.75rem, 1.5vh, 1.5rem);
+  --gap: clamp(1.5rem, 3vh, 2.5rem);
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   gap: var(--gap);
-  padding: 0 1.5rem clamp(1.5rem, 3vh, 2.5rem);
-  margin-top: auto;
-  margin-bottom: auto;
+  padding: 0 1.5rem clamp(2rem, 4vh, 3rem);
 }
 
 .profile-circle-container {
@@ -280,8 +279,7 @@ body.dark-mode {
   z-index: 1060;
   max-width: 600px;
   padding: 0 1rem;
-  /* Pull intro text closer to image on large screens, relax on smaller ones */
-  margin-top: clamp(-1.5rem, -3vh, -3rem);
+  margin-top: 0;
 }
 
 .intro-text p {
@@ -440,16 +438,22 @@ body.dark-mode {
   color: #FF6C0C;
 }
 
+.section {
+  padding-top: 60px;
+  padding-bottom: 0;
+  scroll-margin-top: 120px;
+}
+
 .about-section {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
-  padding-top: 100px;
+  padding-top: 120px;
+  padding-bottom: 0;
+  scroll-margin-top: 120px;
 }
 
 .experience-section {
-  padding-top: clamp(40px, 6vh, 80px);
   min-height: 130vh;
   position: relative;
 }
@@ -1074,7 +1078,7 @@ body.dark-mode {
 
 /* Projects Section */
 .projects-section {
-  padding: 2rem 5rem 1rem 5rem;
+  padding: 0 5rem 0 5rem;
   background: linear-gradient(135deg, rgba(187, 128, 224, 0.03) 0%, rgba(255, 255, 255, 0.02) 100%);
 }
 
@@ -1288,12 +1292,10 @@ body.dark-mode {
     padding: 0.45rem 1.6rem;
   }
 
-  .about-section {
-    padding-top: 90px;
-  }
-
-  .experience-section {
-    padding-top: 120px;
+  .section {
+    padding-top: 30px;
+    padding-bottom: 0;
+    scroll-margin-top: 110px;
   }
 
   .experience-grid-container {
@@ -1361,8 +1363,10 @@ body.dark-mode {
     padding: 0.4rem 1.4rem;
   }
 
-  .about-section {
-    padding-top: 80px;
+  .section {
+    padding-top: 24px;
+    padding-bottom: 0;
+    scroll-margin-top: 95px;
   }
 
   .resume-card {
@@ -1371,10 +1375,6 @@ body.dark-mode {
 
   .resume-card-title {
     font-size: 2rem;
-  }
-
-  .experience-section {
-    padding-top: 80px;
   }
 
   .experience-grid-container {
@@ -1552,12 +1552,10 @@ body.dark-mode {
     font-size: 0.9rem;
   }
 
-  .about-section {
-    padding-top: 70px;
-  }
-
-  .experience-section {
-    padding-top: 90px;
+  .section {
+    padding-top: 22px;
+    padding-bottom: 0;
+    scroll-margin-top: 90px;
   }
 
   .experience-grid-container {
@@ -1577,7 +1575,7 @@ body.dark-mode {
   }
 
   .projects-section {
-    padding: 4rem 1rem 3rem 1rem;
+    padding: 0 1rem 0 1rem;
   }
 
   .project-image-container {
@@ -1665,7 +1663,7 @@ body.dark-mode {
 
   .education-timeline-degree,
   .education-timeline-details {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
   }
 }
 

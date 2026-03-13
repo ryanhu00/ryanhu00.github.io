@@ -480,7 +480,7 @@ const Website: React.FC = () => {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="experience-section">
+      <section id="experience" className="section experience-section">
         <div className="section-title-block">
               <h2>Experience</h2>
         </div>
@@ -649,7 +649,7 @@ const Website: React.FC = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="projects-section">
+      <section id="projects" className="section projects-section">
         <div className="section-title-block">
           <h2>Projects</h2>
         </div>
