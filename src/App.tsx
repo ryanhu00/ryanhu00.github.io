@@ -461,7 +461,7 @@ const Website: React.FC = () => {
           <div className="resume-card-container">
             <div className="resume-card">
               <div className="resume-card-header">
-                <span className="resume-card-meta">Last Updated: March 2026</span>
+                <span className="resume-card-meta">Last Updated: April 2026</span>
               </div>
               <div className="resume-card-title-row">
                 <div className="resume-card-title">Resume</div>
