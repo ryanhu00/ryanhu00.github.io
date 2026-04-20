@@ -575,6 +575,15 @@ const Website: React.FC = () => {
                   <div className="experience-timeline-item">
                     <div className="experience-timeline-dot"></div>
                     <div className="experience-timeline-details">
+                      <h4>Caltech Wierman Lab - Machine Learning Researcher</h4>
+                      <p className="experience-timeline-date">April 2026 - Present</p>
+                      <p className="experience-timeline-description">Researching diffusion-based approaches for constrained optimal power flow in energy system contexts</p>
+                    </div>
+                  </div>
+
+                  <div className="experience-timeline-item">
+                    <div className="experience-timeline-dot"></div>
+                    <div className="experience-timeline-details">
                       <h4>Caltech Alvarez Lab - Machine Learning Researcher</h4>
                       <p className="experience-timeline-date">February 2025 - Present</p>
                       <p className="experience-timeline-description">Collaborating with Activision to develop methods for toxic, anomalous, and outlier player behavior detection in competitive action games. 
