@@ -37,6 +37,7 @@ import runningdogvideo from './assets/project_images/running_dog_demo.mp4';
 import visualanemometry from './assets/project_images/visual_anemometry.png';
 import stocktrading from './assets/project_images/stock_trading.jpg';
 import aginghiv from './assets/project_images/aging_hiv.jpg';
+import tinylm from './assets/project_images/tinylm.png';
 
 
 // Create the responsive grid layout component
@@ -45,29 +46,33 @@ const ResponsiveReactGridLayout = WidthProvider(Responsive);
 // Grid layout configuration
 const layouts = {
   lg: [
-    { i: 'project-1', x: 0, y: 0, w: 6, h: 4 },
-    { i: 'project-2', x: 6, y: 0, w: 6, h: 4 },
-    { i: 'project-3', x: 0, y: 4, w: 6, h: 4 },
-    { i: 'project-4', x: 6, y: 4, w: 6, h: 4 },
+
+    { i: 'project-5', x: 0, y: 0, w: 6, h: 4 },
+    { i: 'project-1', x: 6, y: 0, w: 6, h: 4 },
+    { i: 'project-2', x: 0, y: 4, w: 6, h: 4 },
+    { i: 'project-3', x: 6, y: 4, w: 6, h: 4 },
+    { i: 'project-4', x: 0, y: 6, w: 6, h: 4 },
   ],
   md: [
-    { i: 'project-1', x: 0, y: 0, w: 5, h: 4 },
-    { i: 'project-2', x: 5, y: 0, w: 5, h: 4 },
-    { i: 'project-3', x: 0, y: 4, w: 5, h: 4 },
-    { i: 'project-4', x: 5, y: 4, w: 5, h: 4 },
-    { i: 'project-5', x: 0, y: 8, w: 5, h: 4 }
+    { i: 'project-5', x: 0, y: 0, w: 5, h: 4 },
+    { i: 'project-1', x: 5, y: 0, w: 5, h: 4 },
+    { i: 'project-2', x: 0, y: 4, w: 5, h: 4 },
+    { i: 'project-3', x: 5, y: 4, w: 5, h: 4 },
+    { i: 'project-4', x: 0, y: 6, w: 5, h: 4 },
   ],
   sm: [
-    { i: 'project-1', x: 0, y: 0, w: 3, h: 4 },
-    { i: 'project-2', x: 3, y: 0, w: 3, h: 4 },
-    { i: 'project-3', x: 0, y: 4, w: 3, h: 4 },
-    { i: 'project-4', x: 3, y: 4, w: 3, h: 4 },
-  ],
+    { i: 'project-5', x: 0, y: 0, w: 3, h: 4 },
+    { i: 'project-1', x: 3, y: 0, w: 3, h: 4 },
+    { i: 'project-2', x: 0, y: 4, w: 3, h: 4 },
+    { i: 'project-3', x: 3, y: 4, w: 3, h: 4 },
+    { i: 'project-4', x: 0, y: 6, w: 3, h: 4 },
+  ],  
   xs: [
-    { i: 'project-1', x: 0, y: 0, w: 4, h: 4 },
-    { i: 'project-2', x: 0, y: 4, w: 4, h: 4 },
-    { i: 'project-3', x: 0, y: 8, w: 4, h: 4 },
-    { i: 'project-4', x: 0, y: 12, w: 4, h: 4 },
+    { i: 'project-5', x: 0, y: 0, w: 4, h: 4 },
+    { i: 'project-1', x: 0, y: 4, w: 4, h: 4 },
+    { i: 'project-2', x: 0, y: 8, w: 4, h: 4 },
+    { i: 'project-3', x: 0, y: 12, w: 4, h: 4 },
+    { i: 'project-4', x: 0, y: 16, w: 4, h: 4 },
   ]
 };
 
@@ -678,6 +683,32 @@ const Website: React.FC = () => {
             onBreakpointChange={(breakpoint) => setCurrentBreakpoint(breakpoint)}
           >
             
+            <div key="project-5" className="project-card">
+              <div className="project-card-content">
+                <div className="project-image-container">
+                  <img 
+                    src={tinylm} 
+                    alt="Transformer Language Model"
+                    className="project-image"
+                  />
+                </div>
+                <div className="project-text-content">
+                  <div className="project-info">
+                    <h3>TinyLM</h3>
+                    <p> Transformer language model coded from scratch, trained on TinyStories datset. </p>
+                  </div>
+                  <div className="project-buttons">
+                    <a className="project-button" href="https://github.com/ryanhu00/tinylm" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
+                      Code
+                      <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zM19 19H5V5h7V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div key="project-1" className="project-card">
               <div className="project-card-content">
                 <div className="project-image-container">
