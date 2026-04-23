@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.4ece0539.css",
-    "main.js": "/static/js/main.2730b5f9.js",
+    "main.js": "/static/js/main.614a1d99.js",
     "static/js/453.fa03fbbd.chunk.js": "/static/js/453.fa03fbbd.chunk.js",
     "static/media/visual_anemometry.png": "/static/media/visual_anemometry.82ecee6066cf530e1f7d.png",
     "static/media/stock_trading.jpg": "/static/media/stock_trading.9107af061b85ab9bf049.jpg",
@@ -22,6 +22,7 @@
     "static/media/aws_logo.png": "/static/media/aws_logo.316da603b6d42393e022.png",
     "static/media/C++_logo.png": "/static/media/C++_logo.fd742c3fee24cf600c83.png",
     "static/media/C_logo.png": "/static/media/C_logo.bbbbbabc8c191bfb99bf.png",
+    "static/media/tinylm.png": "/static/media/tinylm.315daffc978ed1e4a3c2.png",
     "static/media/numpy_logo.png": "/static/media/numpy_logo.ad6ce4268be9e06f8cb4.png",
     "static/media/opencv_logo.png": "/static/media/opencv_logo.619323d409ecad2e7c1b.png",
     "static/media/react_logo.png": "/static/media/react_logo.98ff38735baa4c1b0381.png",
@@ -29,11 +30,11 @@
     "static/media/Java_logo.png": "/static/media/Java_logo.6c64373d3b7415758078.png",
     "index.html": "/index.html",
     "main.4ece0539.css.map": "/static/css/main.4ece0539.css.map",
-    "main.2730b5f9.js.map": "/static/js/main.2730b5f9.js.map",
+    "main.614a1d99.js.map": "/static/js/main.614a1d99.js.map",
     "453.fa03fbbd.chunk.js.map": "/static/js/453.fa03fbbd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4ece0539.css",
-    "static/js/main.2730b5f9.js"
+    "static/js/main.614a1d99.js"
   ]
 }
