@@ -526,7 +526,10 @@ const Website: React.FC = () => {
                         <h4>California Institute of Technology (Caltech)</h4>
                         <p className="education-timeline-date">2023 - 2027</p>
                         <p className="education-timeline-degree"><i>Bachelor of Science in Computer Science - 4.2/4.0 GPA</i></p>
-                        <p className="education-timeline-details"> <u>Relevant Coursework:</u> Computer Programming, Programming Methods, Software Design, Deep Learning, Learning Systems, Machine Learning & Data Mining, 3D Deep Learning, GPU Programming, Statistical Inference, Bayesian Statistics, Decidability and Tractability, Algorithms, Computing Systems, Differential Equations, Probability and Statistics</p>
+                        <p className="education-timeline-details"> <u>Relevant Coursework:</u> Computer Programming, Programming Methods, Software Design, Deep Learning, 
+                                                                      Learning Systems, Machine Learning & Data Mining, 3D Deep Learning, GPU Programming, Statistical Inference, 
+                                                                      Bayesian Statistics, Diffusion Models, Decidability and Tractability, Algorithms, Computing Systems, 
+                                                                      Differential Equations, Probability and Statistics</p>
                         <p className="education-timeline-details"> <u>Activities:</u> NCAA D3 Men's Basketball, Peer Academic Coach, Hacktech Organizer </p>
         
                       </div>
@@ -573,7 +576,7 @@ const Website: React.FC = () => {
                     <div className="experience-timeline-details">
                       <h4>Amazon - Software Development Engineer Intern</h4>
                       <p className="experience-timeline-date">June 2026 - September 2026</p>
-                      <p className="experience-timeline-description">Incoming Summer 2026. Working on the Amazon Stores Team.</p>
+                      <p className="experience-timeline-description">Incoming Summer 2026. Working on the Amazon Business Payments Team.</p>
                     </div>
                   </div>
 
@@ -582,7 +585,7 @@ const Website: React.FC = () => {
                     <div className="experience-timeline-details">
                       <h4>Caltech Wierman Lab - Machine Learning Researcher</h4>
                       <p className="experience-timeline-date">April 2026 - Present</p>
-                      <p className="experience-timeline-description">Researching diffusion-based approaches for constrained optimal power flow in energy system contexts</p>
+                      <p className="experience-timeline-description">Researching diffusion-based approaches for constrained optimal power flow in energy system contexts.</p>
                     </div>
                   </div>
 
@@ -695,7 +698,7 @@ const Website: React.FC = () => {
                 <div className="project-text-content">
                   <div className="project-info">
                     <h3>TinyLM</h3>
-                    <p> Transformer language model coded from scratch, trained on TinyStories datset. </p>
+                    <p> Transformer language model coded from scratch, trained on TinyStories dataset. </p>
                   </div>
                   <div className="project-buttons">
                     <a className="project-button" href="https://github.com/ryanhu00/tinylm" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
@@ -725,6 +728,12 @@ const Website: React.FC = () => {
                        Agents dynamically ingest, debate, and reason over financial data to output explainable decisions.</p>
                   </div>
                   <div className="project-buttons">
+                  <a className="project-button" href="/multi_agent_debate.pdf" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
+                      Project
+                      <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zM19 19H5V5h7V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z"/>
+                      </svg>
+                    </a>
                     <a className="project-button" href="https://github.com/Z4KH/brainrot" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
                       Code
                       <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
@@ -747,9 +756,9 @@ const Website: React.FC = () => {
                 </div>
                 <div className="project-text-content">
                   <div className="project-info">
-                    <h3>Impact of Socioeconomic Factors on HIV Aging (In Progress)</h3>
+                    <h3>Impact of Socioeconomic Factors on HIV Aging (Manuscript in Submission)</h3>
                     <p> Applying machine learning techniques to analyze the impact of traditional epigenetic factors in addition to socioeconomic factors, 
-                        such as air quality and temperature, on the aging of people with HIV. Primarily employed gradient boosting trees (XGBoost) for causal inference. Currently authoring a paper on the results of our analysis. </p>
+                        such as air quality and temperature, on the aging of people with HIV. Primarily employed gradient boosting trees (XGBoost) for causal inference. </p>
                   </div>
                   <div className="project-buttons">
                   </div>
