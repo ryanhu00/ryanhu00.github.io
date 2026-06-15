@@ -751,7 +751,7 @@ const Website: React.FC = () => {
                     <p>  Geometry-aware diffusion framework for DC Optimal Power Flow (OPF) in electric power grids. Uses learned latent representations to generate feasible generator dispatch solutions while respecting physical and operational constraints.</p>
                   </div>
                   <div className="project-buttons">
-                  <a className="project-button" href="/namm-dc-opf.pdf" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
+                  <a className="project-button" href="/namm_opf.pdf" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
                       Project
                       <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zM19 19H5V5h7V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z"/>
