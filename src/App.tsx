@@ -38,6 +38,8 @@ import visualanemometry from './assets/project_images/visual_anemometry.png';
 import stocktrading from './assets/project_images/stock_trading.jpg';
 import aginghiv from './assets/project_images/aging_hiv.jpg';
 import tinylm from './assets/project_images/tinylm.png';
+import nammopf from './assets/project_images/namm_opf.png';
+import voxelrasterizer from './assets/project_images/voxel_rasterizer_sphere_orbit.mp4';
 
 
 // Create the responsive grid layout component
@@ -46,33 +48,40 @@ const ResponsiveReactGridLayout = WidthProvider(Responsive);
 // Grid layout configuration
 const layouts = {
   lg: [
-
-    { i: 'project-5', x: 0, y: 0, w: 6, h: 4 },
-    { i: 'project-1', x: 6, y: 0, w: 6, h: 4 },
-    { i: 'project-2', x: 0, y: 4, w: 6, h: 4 },
-    { i: 'project-3', x: 6, y: 4, w: 6, h: 4 },
-    { i: 'project-4', x: 0, y: 6, w: 6, h: 4 },
+    { i: 'project-6', x: 0, y: 0, w: 6, h: 4 },
+    { i: 'project-7', x: 6, y: 0, w: 6, h: 4 },
+    { i: 'project-5', x: 0, y: 4, w: 6, h: 4 },
+    { i: 'project-1', x: 6, y: 4, w: 6, h: 4 },
+    { i: 'project-2', x: 0, y: 8, w: 6, h: 4 },
+    { i: 'project-3', x: 6, y: 8, w: 6, h: 4 },
+    { i: 'project-4', x: 0, y: 12, w: 6, h: 4 },
   ],
   md: [
-    { i: 'project-5', x: 0, y: 0, w: 5, h: 4 },
-    { i: 'project-1', x: 5, y: 0, w: 5, h: 4 },
-    { i: 'project-2', x: 0, y: 4, w: 5, h: 4 },
-    { i: 'project-3', x: 5, y: 4, w: 5, h: 4 },
-    { i: 'project-4', x: 0, y: 6, w: 5, h: 4 },
+    { i: 'project-6', x: 0, y: 0, w: 5, h: 4 },
+    { i: 'project-7', x: 5, y: 0, w: 5, h: 4 },
+    { i: 'project-5', x: 0, y: 4, w: 5, h: 4 },
+    { i: 'project-1', x: 5, y: 4, w: 5, h: 4 },
+    { i: 'project-2', x: 0, y: 8, w: 5, h: 4 },
+    { i: 'project-3', x: 5, y: 8, w: 5, h: 4 },
+    { i: 'project-4', x: 0, y: 12, w: 5, h: 4 },
   ],
   sm: [
-    { i: 'project-5', x: 0, y: 0, w: 3, h: 4 },
-    { i: 'project-1', x: 3, y: 0, w: 3, h: 4 },
-    { i: 'project-2', x: 0, y: 4, w: 3, h: 4 },
-    { i: 'project-3', x: 3, y: 4, w: 3, h: 4 },
-    { i: 'project-4', x: 0, y: 6, w: 3, h: 4 },
+    { i: 'project-6', x: 0, y: 0, w: 3, h: 4 },
+    { i: 'project-7', x: 3, y: 0, w: 3, h: 4 },
+    { i: 'project-5', x: 0, y: 4, w: 3, h: 4 },
+    { i: 'project-1', x: 3, y: 4, w: 3, h: 4 },
+    { i: 'project-2', x: 0, y: 8, w: 3, h: 4 },
+    { i: 'project-3', x: 3, y: 8, w: 3, h: 4 },
+    { i: 'project-4', x: 0, y: 12, w: 3, h: 4 },
   ],  
   xs: [
-    { i: 'project-5', x: 0, y: 0, w: 4, h: 4 },
-    { i: 'project-1', x: 0, y: 4, w: 4, h: 4 },
-    { i: 'project-2', x: 0, y: 8, w: 4, h: 4 },
-    { i: 'project-3', x: 0, y: 12, w: 4, h: 4 },
-    { i: 'project-4', x: 0, y: 16, w: 4, h: 4 },
+    { i: 'project-6', x: 0, y: 0, w: 4, h: 4 },
+    { i: 'project-7', x: 0, y: 4, w: 4, h: 4 },
+    { i: 'project-5', x: 0, y: 8, w: 4, h: 4 },
+    { i: 'project-1', x: 0, y: 12, w: 4, h: 4 },
+    { i: 'project-2', x: 0, y: 16, w: 4, h: 4 },
+    { i: 'project-3', x: 0, y: 20, w: 4, h: 4 },
+    { i: 'project-4', x: 0, y: 24, w: 4, h: 4 },
   ]
 };
 
@@ -466,7 +475,7 @@ const Website: React.FC = () => {
           <div className="resume-card-container">
             <div className="resume-card">
               <div className="resume-card-header">
-                <span className="resume-card-meta">Last Updated: April 2026</span>
+                <span className="resume-card-meta">Last Updated: June 2026</span>
               </div>
               <div className="resume-card-title-row">
                 <div className="resume-card-title">Resume</div>
@@ -612,7 +621,7 @@ const Website: React.FC = () => {
                     <div className="experience-timeline-dot"></div>
                     <div className="experience-timeline-details">
                       <h4>Tracevision - Math Team Machine Learning Intern</h4>
-                      <p className="experience-timeline-date">June 2025 - Sep 2025</p>
+                      <p className="experience-timeline-date">April 2025 - September 2025</p>
                       <p className="experience-timeline-description">Working in the Math Team on basketball shot event detection using raw full-game footage. 
                       Developing preprocessing scripts to extract focused shot sequences. 
                       Deploying hybrid CNN + Transformer model for accurate classification of shot outcomes from annotated clips.</p>
@@ -623,7 +632,7 @@ const Website: React.FC = () => {
                     <div className="experience-timeline-dot"></div>
                     <div className="experience-timeline-details">
                       <h4>Tracevision - Math Team Software Engineer Intern</h4>
-                      <p className="experience-timeline-date">April 2025 - Sep 2025</p>
+                      <p className="experience-timeline-date">April 2025 - September 2025</p>
                       <p className="experience-timeline-description">Working in the Math Team on geospatial API development and production tool infrastructure.
                         Developing scripts and pipelines to process and integrate location data for proofs-of-concept and real-world deployment in security and retail sectors.</p>
                     </div>
@@ -685,7 +694,80 @@ const Website: React.FC = () => {
             draggableCancel=".project-button, .project-buttons"
             onBreakpointChange={(breakpoint) => setCurrentBreakpoint(breakpoint)}
           >
-            
+
+            <div key="project-7" className="project-card">
+              <div className="project-card-content">
+                <div className="project-image-container">
+                  <video 
+                    className="project-image"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    onLoadedMetadata={(e) => { e.currentTarget.playbackRate = 0.5; }}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'fill'
+                    }}
+                  >
+                    <source src={voxelrasterizer} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <div className="project-text-content">
+                  <div className="project-info">
+                    <h3>Voxel Rasterizer </h3>
+                    <p>  GPU-accelerated voxel reconstruction and rendering pipeline built with CUDA. Reconstructs 3D scenes from multi-view images using shape-from-silhouette techniques and renders novel viewpoints through real-time ray marching.</p>
+                  </div>
+                  <div className="project-buttons">
+                    <a className="project-button" 
+                        href="https://github.com/ryanhu00/voxel-rasterizer"
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}>
+                        Code
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zM19 19H5V5h7V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z"/>
+                        </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div key="project-6" className="project-card">
+              <div className="project-card-content">
+                <div className="project-image-container">
+                  <img 
+                    src={nammopf} 
+                    alt="nammopf"
+                    className="project-image"
+                  />
+                </div>
+                <div className="project-text-content">
+                  <div className="project-info">
+                    <h3>Neural Approximate Mirror Maps for DC-OPF</h3>
+                    <p>  Geometry-aware diffusion framework for DC Optimal Power Flow (OPF) in electric power grids. Uses learned latent representations to generate feasible generator dispatch solutions while respecting physical and operational constraints.</p>
+                  </div>
+                  <div className="project-buttons">
+                  <a className="project-button" href="/namm-dc-opf.pdf" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
+                      Project
+                      <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zM19 19H5V5h7V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z"/>
+                      </svg>
+                    </a>
+                    <a className="project-button" href="https://github.com/ryanhu00/namm-opf" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
+                      Code
+                      <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zM19 19H5V5h7V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div key="project-5" className="project-card">
               <div className="project-card-content">
                 <div className="project-image-container">
