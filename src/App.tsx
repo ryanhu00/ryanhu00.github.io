@@ -493,7 +493,7 @@ const Website: React.FC = () => {
           {/* Intro Text */}
           <div className="intro-text-container">
             <div className="intro-text">
-              <p>Currently Studying @ <span className="caltech-orange">Caltech</span>. Pursuing a BS in CS. Currently, my interests lie in Software Engineering, AI/ML, and general problem-solving. 
+              <p>Currently Studying @ <span className="caltech-orange">Caltech</span>. Pursuing a BS in CS. My main interests lie in engineering, AI/ML, and general problem-solving. 
               I'm also passionate about basketball (formerly on the NCAA D3 Men's Team), music, and philosophy.</p>
             </div>
           </div>
