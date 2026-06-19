@@ -556,6 +556,10 @@ body.dark-mode {
   background: #333;
 }
 
+.dark-mode .experience-timeline-dot {
+  border-color: #333;
+}
+
 .experience-timeline-content {
   position: relative;
   flex: 1;
