@@ -7,7 +7,8 @@ const AmbientBackground: React.FC = () => {
     if (!canvasRef.current) return;
 
     // Constants
-    const particleCount = 300;
+    const clamp = (v: number, min: number, max: number) => Math.max(min, Math.min(max, v));
+    const particleCount = clamp(Math.round((window.innerWidth * window.innerHeight) / 1_000_000 * 145), 50, 300);
     const particlePropCount = 9;
     const particlePropsLength = particleCount * particlePropCount;
     const baseTTL = 100;
