@@ -431,22 +431,22 @@ const Website: React.FC = () => {
       {/* Navbar */}
       <nav className="pill-navbar">
         <div className="pill-navbar-inner">
-          <div className="pill-navbar-left">
-            <img src={isDarkMode ? rhuLogoWhite : rhuLogoBlack} alt="Rhu Logo" className="pill-navbar-logo" />
-            <ul className="pill-navbar-links">
-              {NAV_LINKS.map(link => (
-                <li key={link.id}>
-                  <button
-                    className={`pill-navbar-link${active === link.id ? ' active' : ''}`}
-                    onClick={() => handleNavClick(link.id)}
-                  >
-                    {link.label}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <DarkModeToggle />
+          <img src={isDarkMode ? rhuLogoWhite : rhuLogoBlack} alt="Rhu Logo" className="pill-navbar-logo" />
+          <ul className="pill-navbar-links">
+            {NAV_LINKS.map(link => (
+              <li key={link.id}>
+                <button
+                  className={`pill-navbar-link${active === link.id ? ' active' : ''}`}
+                  onClick={() => handleNavClick(link.id)}
+                >
+                  {link.label}
+                </button>
+              </li>
+            ))}
+            <li>
+              <DarkModeToggle />
+            </li>
+          </ul>
         </div>
       </nav>
 
