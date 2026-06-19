@@ -9,9 +9,10 @@ const AmbientBackground: React.FC = () => {
     // Constants
     const clamp = (v: number, min: number, max: number) => Math.max(min, Math.min(max, v));
     const getParticleCount = () => clamp(Math.round((window.innerWidth * window.innerHeight) / 1_000_000 * 145), 50, 300);
+    const maxParticles = 300;
     const particlePropCount = 9;
-    let particleCount = getParticleCount();
-    let particlePropsLength = particleCount * particlePropCount;
+    let activeCount = getParticleCount();
+    let targetCount = activeCount;
     const baseTTL = 100;
     const rangeTTL = 500;
     const baseSpeed = 0.1;
@@ -78,11 +79,11 @@ const AmbientBackground: React.FC = () => {
     }
 
     function initParticles() {
-      particleProps = new Float32Array(particlePropsLength);
+      particleProps = new Float32Array(maxParticles * particlePropCount);
 
       let i;
       
-      for (i = 0; i < particlePropsLength; i += particlePropCount) {
+      for (i = 0; i < activeCount * particlePropCount; i += particlePropCount) {
         initParticle(i);
       }
     }
@@ -165,9 +166,20 @@ const AmbientBackground: React.FC = () => {
     }
 
     function drawParticles() {
-      let i;
+      if (targetCount !== activeCount) {
+        const step = Math.max(1, Math.ceil(Math.abs(targetCount - activeCount) / 60));
+        if (targetCount > activeCount) {
+          const add = Math.min(step, targetCount - activeCount);
+          for (let j = 0; j < add; j++) {
+            initParticle(activeCount * particlePropCount);
+            activeCount++;
+          }
+        } else {
+          activeCount -= Math.min(step, activeCount - targetCount);
+        }
+      }
 
-      for (i = 0; i < particlePropsLength; i += particlePropCount) {
+      for (let i = 0; i < activeCount * particlePropCount; i += particlePropCount) {
         updateParticle(i);
       }
     }
@@ -217,12 +229,7 @@ const AmbientBackground: React.FC = () => {
       resize();
       clearTimeout(resizeTimeout);
       resizeTimeout = window.setTimeout(() => {
-        const newCount = getParticleCount();
-        if (newCount !== particleCount) {
-          particleCount = newCount;
-          particlePropsLength = particleCount * particlePropCount;
-          initParticles();
-        }
+        targetCount = getParticleCount();
       }, 150);
     };
     window.addEventListener('resize', handleResize);
