@@ -8,9 +8,10 @@ const AmbientBackground: React.FC = () => {
 
     // Constants
     const clamp = (v: number, min: number, max: number) => Math.max(min, Math.min(max, v));
-    const particleCount = clamp(Math.round((window.innerWidth * window.innerHeight) / 1_000_000 * 145), 50, 300);
+    const getParticleCount = () => clamp(Math.round((window.innerWidth * window.innerHeight) / 1_000_000 * 145), 50, 300);
     const particlePropCount = 9;
-    const particlePropsLength = particleCount * particlePropCount;
+    let particleCount = getParticleCount();
+    let particlePropsLength = particleCount * particlePropCount;
     const baseTTL = 100;
     const rangeTTL = 500;
     const baseSpeed = 0.1;
@@ -211,7 +212,19 @@ const AmbientBackground: React.FC = () => {
     initParticles();
     draw();
 
-    const handleResize = () => resize();
+    let resizeTimeout: number;
+    const handleResize = () => {
+      resize();
+      clearTimeout(resizeTimeout);
+      resizeTimeout = window.setTimeout(() => {
+        const newCount = getParticleCount();
+        if (newCount !== particleCount) {
+          particleCount = newCount;
+          particlePropsLength = particleCount * particlePropCount;
+          initParticles();
+        }
+      }, 150);
+    };
     window.addEventListener('resize', handleResize);
 
     return () => {
