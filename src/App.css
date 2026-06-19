@@ -27,15 +27,15 @@ body.dark-mode {
   background: transparent;
   border: 2px solid #e0e0e0;
   border-radius: 50%;
-  width: 48px;
-  height: 48px;
+  width: clamp(34px, 3.5vw, 48px);
+  height: clamp(34px, 3.5vw, 48px);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
   flex-shrink: 0;
-  margin-left: 2.2rem;
+  margin-left: clamp(1.2rem, 1.8vw, 2.2rem);
 }
 
 .dark-mode-toggle:hover {
@@ -290,7 +290,7 @@ body.dark-mode {
   background: rgba(255, 255, 255, 0.85);
   border-radius: 2rem;
   padding: 0.6rem 1.2rem 0.6rem 1.2rem;
-  min-width: 300px;
+  min-width: min(300px, 85vw);
   box-shadow: 0 2px 16px 0 rgba(0,0,0,0.12);
   display: flex;
   flex-direction: column;
@@ -307,7 +307,7 @@ body.dark-mode {
 
 .resume-card-meta {
   color: #666;
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 0.9vw, 0.95rem);
   font-family: 'Satoshi', sans-serif;
   font-weight: 400;
   margin-bottom: 0.1rem;
@@ -328,7 +328,7 @@ body.dark-mode {
 
 .resume-card-title {
   color: #222;
-  font-size: 2.2rem;
+  font-size: clamp(1.6rem, 2vw, 2.2rem);
   font-family: 'Satoshi', sans-serif;
   font-weight: 600;
   margin: 0;
@@ -344,8 +344,8 @@ body.dark-mode {
 
 .resume-card-icons svg {
   cursor: pointer;
-  width: 2.2rem;
-  height: 2.2rem;
+  width: clamp(1.6rem, 2vw, 2.2rem);
+  height: clamp(1.6rem, 2vw, 2.2rem);
   transition: transform 0.15s, filter 0.15s;
 }
 
@@ -356,18 +356,18 @@ body.dark-mode {
 
 .pill-navbar {
   position: fixed;
-  top: 32px;
+  top: clamp(16px, 2.2vw, 32px);
   left: 50%;
   transform: translateX(-50%);
   z-index: 3000;
   background: #fff;
   border-radius: 2.5rem;
   box-shadow: 0 2px 16px 0 rgba(0,0,0,0.10);
-  padding: 0.5rem 2.5rem 0.5rem 1.2rem;
+  padding: clamp(0.35rem, 0.5vw, 0.5rem) clamp(1.5rem, 2vw, 2.5rem) clamp(0.35rem, 0.5vw, 0.5rem) clamp(0.8rem, 1vw, 1.2rem);
   display: flex;
   align-items: center;
-  min-width: 480px;
-  max-width: 700px;
+  min-width: min(480px, 92vw);
+  max-width: min(700px, 94vw);
 }
 
 .pill-navbar-inner {
@@ -383,9 +383,9 @@ body.dark-mode {
 }
 
 .pill-navbar-logo {
-  height: 48px;
+  height: clamp(34px, 3.5vw, 48px);
   width: auto;
-  margin-right: 2.2rem;
+  margin-right: clamp(1.2rem, 1.8vw, 2.2rem);
 }
 
 .pill-navbar-links {
@@ -403,10 +403,10 @@ body.dark-mode {
   border: none;
   outline: none;
   font-family: 'Satoshi', sans-serif;
-  font-size: 1.35rem;
+  font-size: clamp(1rem, 1.2vw, 1.35rem);
   color: #111;
   font-weight: 500;
-  padding: 0.5rem 1.8rem;
+  padding: clamp(0.35rem, 0.5vw, 0.5rem) clamp(1.2rem, 1.5vw, 1.8rem);
   border-radius: 2rem;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
@@ -423,18 +423,18 @@ body.dark-mode {
 }
 
 .section {
-  padding-top: 60px;
+  padding-top: clamp(20px, 4vw, 60px);
   padding-bottom: 0;
-  scroll-margin-top: 120px;
+  scroll-margin-top: clamp(80px, 10vw, 120px);
 }
 
 .about-section {
   display: flex;
   flex-direction: column;
   position: relative;
-  padding-top: 120px;
+  padding-top: clamp(80px, 10vw, 120px);
   padding-bottom: 0;
-  scroll-margin-top: 120px;
+  scroll-margin-top: clamp(80px, 10vw, 120px);
 }
 
 .experience-section {
@@ -445,7 +445,7 @@ body.dark-mode {
 .experience-grid-container {
   width: 100%;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: clamp(0.5rem, 1.5vw, 2rem) 0;
 }
 
 .experience-grid {
@@ -469,8 +469,8 @@ body.dark-mode {
   width: 100%;
   height: 100%;
   background: rgba(255, 255, 255, 0.4);
-  border-radius: 2rem;
-  padding: 2rem;
+  border-radius: clamp(1rem, 2vw, 2rem);
+  padding: clamp(1.25rem, 2vw, 2rem);
   overflow-y: auto;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
@@ -513,15 +513,15 @@ body.dark-mode {
 .experience-timeline-header {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
+  gap: clamp(0.6rem, 1vw, 1rem);
+  margin-bottom: clamp(1.2rem, 2vw, 2rem);
+  padding-bottom: clamp(0.6rem, 1vw, 1rem);
   border-bottom: 2px solid #e0e0e0;
 }
 
 .experience-timeline-icon {
-  width: 48px;
-  height: 48px;
+  width: clamp(36px, 4vw, 48px);
+  height: clamp(36px, 4vw, 48px);
   background: #f0f7ff;
   border-radius: 50%;
   display: flex;
@@ -532,7 +532,7 @@ body.dark-mode {
 
 .experience-timeline-header h3 {
   font-family: 'Satoshi', sans-serif;
-  font-size: 1.8rem;
+  font-size: clamp(1.3rem, 1.6vw, 1.8rem);
   font-weight: 600;
   color: #222;
   margin: 0;
@@ -565,11 +565,11 @@ body.dark-mode {
 
 .experience-timeline-item {
   position: relative;
-  margin-bottom: 2.5rem;
+  margin-bottom: clamp(1.5rem, 2.5vw, 2.5rem);
   margin-left: 12px;
   display: flex;
   align-items: flex-start;
-  gap: 1.5rem;
+  gap: clamp(0.8rem, 1.2vw, 1.5rem);
 }
 
 .experience-timeline-dot {
@@ -587,7 +587,7 @@ body.dark-mode {
 
 .experience-timeline-details h4 {
   font-family: 'Satoshi', sans-serif;
-  font-size: 1.25rem;
+  font-size: clamp(1.05rem, 1.2vw, 1.25rem);
   font-weight: 600;
   color: #222;
   margin: 0 0 0.5rem 0;
@@ -595,7 +595,7 @@ body.dark-mode {
 
 .experience-timeline-date {
   font-family: 'Satoshi', sans-serif;
-  font-size: 1rem;
+  font-size: clamp(0.85rem, 0.95vw, 1rem);
   font-weight: 500;
   color: #bb80e0;
   margin: 0 0 0.75rem 0;
@@ -603,7 +603,7 @@ body.dark-mode {
 
 .experience-timeline-description {
   font-family: 'Satoshi', sans-serif;
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 0.9vw, 0.95rem);
   font-weight: 400;
   color: #666;
   line-height: 1.5;
@@ -614,8 +614,8 @@ body.dark-mode {
   width: 100%;
   height: 100%;
   background: rgba(255, 255, 255, 0.4);
-  border-radius: 2rem;
-  padding: 2rem;
+  border-radius: clamp(1rem, 2vw, 2rem);
+  padding: clamp(1.25rem, 2vw, 2rem);
   backdrop-filter: blur(5px);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -659,16 +659,16 @@ body.dark-mode {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
+  gap: clamp(0.6rem, 1vw, 1rem);
+  margin-bottom: clamp(1.2rem, 2vw, 2rem);
+  padding-bottom: clamp(0.6rem, 1vw, 1rem);
   flex-shrink: 0;
   border-bottom: 2px solid #e0e0e0;
 }
 
 .education-icon {
-  width: 48px;
-  height: 48px;
+  width: clamp(36px, 4vw, 48px);
+  height: clamp(36px, 4vw, 48px);
   background: #f0f7ff;
   border-radius: 50%;
   display: flex;
@@ -679,7 +679,7 @@ body.dark-mode {
 
 .education-header h3 {
   font-family: 'Satoshi', sans-serif;
-  font-size: 1.8rem;
+  font-size: clamp(1.3rem, 1.6vw, 1.8rem);
   font-weight: 600;
   color: #222;
   margin: 0;
@@ -875,18 +875,18 @@ body.dark-mode {
 
 .leadership-title {
   font-family: 'Satoshi', sans-serif;
-  font-size: 1.05rem;
+  font-size: clamp(0.85rem, 1vw, 1.05rem);
   font-weight: 500;
   color: #222;
 }
 
 .leadership-date {
   font-family: 'Satoshi', sans-serif;
-  font-size: 0.95rem;
+  font-size: clamp(0.8rem, 0.9vw, 0.95rem);
   font-weight: 500;
   color: #bb80e0;
   white-space: nowrap;
-  margin-left: 1.5rem;
+  margin-left: clamp(0.8rem, 1.2vw, 1.5rem);
 }
 
 .dark-mode .leadership-title {
@@ -902,8 +902,8 @@ body.dark-mode {
   width: 100%;
   height: 100%;
   background: rgba(255, 255, 255, 0.4);
-  border-radius: 2rem;
-  padding: 2rem;
+  border-radius: clamp(1rem, 2vw, 2rem);
+  padding: clamp(1.25rem, 2vw, 2rem);
   backdrop-filter: blur(5px);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -915,15 +915,15 @@ body.dark-mode {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
+  gap: clamp(0.6rem, 1vw, 1rem);
+  margin-bottom: clamp(1.2rem, 2vw, 2rem);
+  padding-bottom: clamp(0.6rem, 1vw, 1rem);
   border-bottom: 2px solid #e0e0e0;
 }
 
 .tech-stack-icon {
-  width: 48px;
-  height: 48px;
+  width: clamp(36px, 4vw, 48px);
+  height: clamp(36px, 4vw, 48px);
   background: #f0f7ff;
   border-radius: 50%;
   display: flex;
@@ -934,7 +934,7 @@ body.dark-mode {
 
 .tech-stack-header h3 {
   font-family: 'Satoshi', sans-serif;
-  font-size: 1.8rem;
+  font-size: clamp(1.3rem, 1.6vw, 1.8rem);
   font-weight: 600;
   color: #222;
   margin: 0;
@@ -959,10 +959,10 @@ body.dark-mode {
 
 .tech-stack-column h4 {
   font-family: 'Satoshi', sans-serif;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 1.1vw, 1.2rem);
   font-weight: 600;
   color: #222;
-  margin: 0 0 1rem 0;
+  margin: 0 0 clamp(0.5rem, 1vw, 1rem) 0;
   text-align: center;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid #e0e0e0;
@@ -1065,7 +1065,7 @@ body.dark-mode {
 
 .section-title-block h2 {
   font-family: 'Satoshi', sans-serif;
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 2.5vw, 2.5rem);
   font-weight: 700;
   color: #222;
   margin: 0;
@@ -1141,14 +1141,14 @@ body.dark-mode {
 
 /* Projects Section */
 .projects-section {
-  padding: 0 5rem 0 5rem;
+  padding: 0 clamp(1rem, 4vw, 5rem);
   background: linear-gradient(135deg, rgba(187, 128, 224, 0.03) 0%, rgba(255, 255, 255, 0.02) 100%);
 }
 
 .projects-grid-container {
   width: 100%;
   margin: 0 auto;
-  padding: 1rem 0;
+  padding: clamp(0.5rem, 1vw, 1rem) 0;
 }
 
 .projects-grid {
@@ -1203,7 +1203,7 @@ body.dark-mode {
 }
 
 .project-text-content {
-  padding: 1.5rem;
+  padding: clamp(1rem, 1.5vw, 1.5rem);
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -1216,7 +1216,7 @@ body.dark-mode {
 
 .project-card-content h3 {
   color: #2d3748;
-  font-size: 1.4rem;
+  font-size: clamp(1.1rem, 1.3vw, 1.4rem);
   font-weight: 700;
   font-family: 'Satoshi', sans-serif;
   margin: 0 0 0.75rem 0;
@@ -1225,7 +1225,7 @@ body.dark-mode {
 
 .project-card-content p {
   color: #4a5568;
-  font-size: 0.95rem;
+  font-size: clamp(0.82rem, 0.9vw, 0.95rem);
   line-height: 1.6;
   font-family: 'Satoshi', sans-serif;
   margin: 0;
@@ -1246,9 +1246,9 @@ body.dark-mode {
   color: #2d3748;
   border: 2px solid #bb80e0;
   border-radius: 0.5rem;
-  padding: 0.75rem 1.25rem;
+  padding: clamp(0.5rem, 0.7vw, 0.75rem) clamp(0.8rem, 1.1vw, 1.25rem);
   font-family: 'Satoshi', sans-serif;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 0.85vw, 0.9rem);
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -1293,129 +1293,23 @@ body.dark-mode {
 }
 
 /* ===== RESPONSIVE MEDIA QUERIES ===== */
-
-@media (max-width: 1600px) {
-  .experience-section {
-    padding-top: 140px;
-  }
-
-  .experience-grid-container {
-    padding: 1.5rem 0;
-  }
-
-}
-
-@media (max-width: 1200px) {
-  .dark-mode-toggle {
-    width: 42px;
-    height: 42px;
-  }
-
-  .dark-mode-toggle svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  .pill-navbar {
-    top: 28px;
-    min-width: 420px;
-    max-width: 600px;
-    padding: 0.45rem 2.2rem 0.45rem 1rem;
-  }
-
-  .pill-navbar-logo {
-    height: 42px;
-    margin-right: 1.8rem;
-  }
-
-  .dark-mode-toggle {
-    margin-left: 1.8rem;
-  }
-
-  .pill-navbar-link {
-    font-size: 1.2rem;
-    padding: 0.45rem 1.6rem;
-  }
-
-  .section {
-    padding-top: 30px;
-    padding-bottom: 0;
-    scroll-margin-top: 110px;
-  }
-
-  .experience-grid-container {
-    padding: 1rem 0;
-  }
-
-}
-
-@media (max-width: 992px) {
-  .dark-mode-toggle {
-    width: 38px;
-    height: 38px;
-  }
-
-  .dark-mode-toggle svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  .pill-navbar {
-    top: 24px;
-    min-width: 380px;
-    max-width: 520px;
-    padding: 0.4rem 2rem 0.4rem 0.9rem;
-  }
-
-  .pill-navbar-logo {
-    height: 38px;
-    margin-right: 1.5rem;
-  }
-
-  .dark-mode-toggle {
-    margin-left: 1.5rem;
-  }
-
-  .pill-navbar-link {
-    font-size: 1.1rem;
-    padding: 0.4rem 1.4rem;
-  }
-
-  .section {
-    padding-top: 24px;
-    padding-bottom: 0;
-    scroll-margin-top: 95px;
-  }
-
-  .resume-card {
-    min-width: 280px;
-  }
-
-  .resume-card-title {
-    font-size: 2rem;
-  }
-
-  .experience-grid-container {
-    padding: 1rem;
-  }
-
-}
+/* Most sizing is now fluid via clamp(). Only true layout changes remain. */
 
 
 
 /* Footer Styles */
 .footer-section {
-  padding: 4rem 5rem 2rem 5rem;
+  padding: clamp(2rem, 4vw, 4rem) clamp(1rem, 4vw, 5rem) clamp(1.5rem, 2vw, 2rem);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: clamp(1.2rem, 2vw, 2rem);
   background: transparent;
 }
 
 .footer-social-circles {
   display: flex;
-  gap: 2rem;
+  gap: clamp(1.2rem, 1.8vw, 2rem);
   align-items: center;
   justify-content: center;
 }
@@ -1434,8 +1328,8 @@ body.dark-mode {
 }
 
 .footer-social-circle svg {
-  width: 32px;
-  height: 32px;
+  width: clamp(24px, 2.5vw, 32px);
+  height: clamp(24px, 2.5vw, 32px);
   color: #000;
   transition: transform 0.2s, color 0.2s;
 }
@@ -1458,7 +1352,7 @@ body.dark-mode {
 
 .footer-description {
   font-family: 'Satoshi', sans-serif;
-  font-size: 1rem;
+  font-size: clamp(0.85rem, 0.95vw, 1rem);
   font-weight: 400;
   color: #666;
   line-height: 1.6;
@@ -1476,7 +1370,7 @@ body.dark-mode {
 
 .footer-copyright {
   font-family: 'Satoshi', sans-serif;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 0.85vw, 0.9rem);
   font-weight: 500;
   color: #000;
   margin: 0;
@@ -1504,124 +1398,8 @@ body.dark-mode {
 }
 
 @media (max-width: 768px) {
-  .dark-mode-toggle {
-    width: 34px;
-    height: 34px;
-  }
-
-  .dark-mode-toggle svg {
-    width: 16px;
-    height: 16px;
-  }
-
-  .pill-navbar {
-    top: 20px;
-    min-width: 320px;
-    max-width: 450px;
-    padding: 0.35rem 1.5rem 0.35rem 0.8rem;
-  }
-
-  .pill-navbar-logo {
-    height: 34px;
-    margin-right: 1.2rem;
-  }
-
-  .dark-mode-toggle {
-    margin-left: 1.2rem;
-  }
-
-  .pill-navbar-link {
-    font-size: 1rem;
-    padding: 0.35rem 1.2rem;
-  }
-
-  .resume-card-title {
-    font-size: 1.8rem;
-  }
-
-  .resume-card-meta {
-    font-size: 0.9rem;
-  }
-
-  .section {
-    padding-top: 22px;
-    padding-bottom: 0;
-    scroll-margin-top: 90px;
-  }
-
-  .experience-grid-container {
-    padding: 0.5rem;
-  }
-
-  .experience-timeline,
-  .education-timeline,
-  .tech-stack {
-    padding: 1.5rem;
-  }
-
-  .experience-timeline-header h3,
-  .education-header h3,
-  .tech-stack-header h3 {
-    font-size: 1.5rem;
-  }
-
-  .projects-section {
-    padding: 0 1rem 0 1rem;
-  }
-
   .project-image-container {
     height: 50%;
-  }
-
-  .project-text-content {
-    padding: 1rem;
-  }
-
-  .project-card-content h3 {
-    font-size: 1.2rem;
-  }
-
-  .project-card-content p {
-    font-size: 0.85rem;
-  }
-
-  .project-buttons {
-    gap: 0.5rem;
-    margin-top: 0.75rem;
-  }
-
-  .project-button {
-    padding: 0.6rem 1rem;
-    font-size: 0.85rem;
-  }
-
-  .footer-section {
-    padding: 3rem 1rem 1.5rem 1rem;
-  }
-
-  .footer-social-circles {
-    gap: 1.5rem;
-  }
-
-  .footer-social-circle svg {
-    width: 28px;
-    height: 28px;
-  }
-
-  .footer-description {
-    font-size: 0.9rem;
-  }
-
-  .footer-copyright {
-    font-size: 0.85rem;
-  }
-
-  .leadership-title {
-    font-size: 0.9rem;
-  }
-
-  .leadership-date {
-    font-size: 0.8rem;
   }
 }
 

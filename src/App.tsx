@@ -350,10 +350,37 @@ const DarkModeToggle: React.FC = () => {
   );
 };
 
+const useAdaptiveGrid = () => {
+  const [dims, setDims] = useState(() => {
+    const w = typeof window !== 'undefined' ? window.innerWidth : 1200;
+    return { width: w };
+  });
+
+  useEffect(() => {
+    const onResize = () => setDims({ width: window.innerWidth });
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  const w = dims.width;
+  const lerp = (min: number, max: number, minW: number, maxW: number) =>
+    Math.round(Math.min(max, Math.max(min, min + ((max - min) * (w - minW)) / (maxW - minW))));
+
+  return {
+    gridMargin: [lerp(8, 16, 480, 1400), lerp(8, 16, 480, 1400)] as [number, number],
+    gridPadding: [lerp(8, 20, 480, 1400), lerp(8, 20, 480, 1400)] as [number, number],
+    projectMargin: [lerp(16, 48, 480, 1400), lerp(12, 20, 480, 1400)] as [number, number],
+    projectPadding: [lerp(8, 20, 480, 1400), lerp(8, 20, 480, 1400)] as [number, number],
+    expRowHeight: lerp(60, 80, 480, 1400),
+    projRowHeight: lerp(75, 100, 480, 1400),
+  };
+};
+
 const Website: React.FC = () => {
   const [active, setActive] = useState('about');
   const [currentBreakpoint, setCurrentBreakpoint] = useState('lg');
   const { isDarkMode } = useTheme();
+  const grid = useAdaptiveGrid();
 
   useEffect(() => {
     const sections = ['about', 'experience', 'projects'];
@@ -505,9 +532,9 @@ const Website: React.FC = () => {
             layouts={experienceLayouts}
             breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480 }}
             cols={{ lg: 12, md: 10, sm: 6, xs: 4 }}
-            rowHeight={80}
-            margin={[16, 16]}
-            containerPadding={[20, 20]}
+            rowHeight={grid.expRowHeight}
+            margin={grid.gridMargin}
+            containerPadding={grid.gridPadding}
             isDraggable={false}
             isResizable={false}
           >
@@ -682,9 +709,9 @@ const Website: React.FC = () => {
             layouts={layouts}
             breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480 }}
             cols={{ lg: 12, md: 10, sm: 6, xs: 4 }}
-            rowHeight={100}
-            margin={[48, 20]}
-            containerPadding={[20, 20]}
+            rowHeight={grid.projRowHeight}
+            margin={grid.projectMargin}
+            containerPadding={grid.projectPadding}
             isDraggable={currentBreakpoint === 'lg' || currentBreakpoint === 'md' || currentBreakpoint === 'sm'}
             isResizable={false}
             draggableCancel=".project-button, .project-buttons"
