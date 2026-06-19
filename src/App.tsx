@@ -88,24 +88,24 @@ const layouts = {
 // Experience section grid layout configuration
 const experienceLayouts = {
   lg: [
-    { i: 'education', x: 0, y: 0, w: 6, h: 6 },
-    { i: 'tech-stack', x: 0, y: 6, w: 6, h: 5 },
-    { i: 'work-experience', x: 6, y: 0, w: 6, h: 11 },
+    { i: 'tech-stack', x: 0, y: 0, w: 6, h: 5 },
+    { i: 'leadership', x: 0, y: 5, w: 6, h: 5 },
+    { i: 'work-experience', x: 6, y: 0, w: 6, h: 10 },
   ],
   md: [
-    { i: 'education', x: 0, y: 0, w: 5, h: 6 },
-    { i: 'tech-stack', x: 0, y: 6, w: 5, h: 5 },
-    { i: 'work-experience', x: 5, y: 0, w: 5, h: 11 },
+    { i: 'tech-stack', x: 0, y: 0, w: 5, h: 5 },
+    { i: 'leadership', x: 0, y: 5, w: 5, h: 5 },
+    { i: 'work-experience', x: 5, y: 0, w: 5, h: 10 },
   ],
   sm: [
-    { i: 'education', x: 0, y: 8, w: 6, h: 6 },
-    { i: 'tech-stack', x: 0, y: 14, w: 6, h: 5 },
-    { i: 'work-experience', x: 0, y: 0, w: 6, h: 8 },
+    { i: 'work-experience', x: 0, y: 0, w: 6, h: 7 },
+    { i: 'tech-stack', x: 0, y: 8, w: 6, h: 5 },
+    { i: 'leadership', x: 0, y: 13, w: 6, h: 5 },
   ],
   xs: [
-    { i: 'work-experience', x: 0, y: 0, w: 4, h: 8 },
-    { i: 'education', x: 0, y: 8, w: 4, h: 6 },
-    { i: 'tech-stack', x: 0, y: 14, w: 4, h: 5 },
+    { i: 'work-experience', x: 0, y: 0, w: 4, h: 7 },
+    { i: 'tech-stack', x: 0, y: 8, w: 4, h: 5 },
+    { i: 'leadership', x: 0, y: 13, w: 4, h: 5 },
   ]
 };
 
@@ -512,57 +512,44 @@ const Website: React.FC = () => {
             isResizable={false}
           >
             
-            {/* Education Timeline */}
-            <div key="education" className="education-timeline">
-              <div className="education-header">
-                <div className="education-icon">
-                  <svg width="24" height="24" fill="#bb80e0" viewBox="0 0 24 24">
-                    <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6L23 9l-11-6zM18.82 9L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
-                  </svg>
-                </div>
-                <h3>Education</h3>
-              </div>
-              
-              <div className="education-timeline-content">
-                <div className="education-timeline-wrapper">
-                  <div className="education-timeline-line">
-                    <div className="education-timeline-pin education-timeline-pin-left">
-                      <svg width="40" height="40" fill="#bb80e0" viewBox="0 0 24 24">
-                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                      </svg>
-                      <div className="education-timeline-connector education-timeline-connector-top"></div>
-                      <div className="education-timeline-text-box education-timeline-text-box-top">
-                        <h4>California Institute of Technology (Caltech)</h4>
-                        <p className="education-timeline-date">2023 - 2027</p>
-                        <p className="education-timeline-degree"><i>Bachelor of Science in Computer Science - 4.2/4.0 GPA</i></p>
-                        <p className="education-timeline-details"> <u>Relevant Coursework:</u> Computer Programming, Programming Methods, Software Design, Deep Learning, 
-                                                                      Learning Systems, Machine Learning & Data Mining, 3D Deep Learning, GPU Programming, Statistical Inference, 
-                                                                      Bayesian Statistics, Diffusion Models, Decidability and Tractability, Algorithms, Computing Systems, 
-                                                                      Differential Equations, Probability and Statistics</p>
-                        <p className="education-timeline-details"> <u>Activities:</u> NCAA D3 Men's Basketball, Peer Academic Coach, Hacktech Organizer </p>
-        
-                      </div>
-                    </div>
-                    <div className="education-timeline-pin education-timeline-pin-right">
-                      <svg width="40" height="40" fill="#bb80e0" viewBox="0 0 24 24">
-                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                      </svg>
-                      <div className="education-timeline-connector education-timeline-connector-bottom"></div>
-                      <div className="education-timeline-text-box education-timeline-text-box-bottom">
-                        <h4>Newport High School</h4>
-                        <p className="education-timeline-date">2019 - 2023</p>
-                        <p className="education-timeline-degree"><i>High School Diploma - 4.0/4.0 GPA</i></p>
-                        <p className="education-timeline-details"> SAT: 1560/1600, ACT: 36/36, PSAT/NMSQT: 1480/1520 </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
             {/* Tech Stack */}
             <div key="tech-stack">
               <TechStack />
+            </div>
+
+            {/* Leadership, Activities, & Awards */}
+            <div key="leadership" className="education-timeline">
+              <div className="education-header">
+                <div className="education-icon">
+                  <svg width="24" height="24" fill="#bb80e0" viewBox="0 0 24 24">
+                    <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
+                  </svg>
+                </div>
+                <h3>Leadership, Activities, & Awards</h3>
+              </div>
+              
+              <div className="leadership-list">
+                <div className="leadership-item">
+                  <span className="leadership-title">Caltech Senior Class Co-President</span>
+                  <span className="leadership-date">Jun 2026 – Present</span>
+                </div>
+                <div className="leadership-item">
+                  <span className="leadership-title">Hacktech Organizer - Caltech's Hackathon</span>
+                  <span className="leadership-date">Dec 2025 – Present</span>
+                </div>
+                <div className="leadership-item">
+                  <span className="leadership-title">NCAA Division III Men's Basketball</span>
+                  <span className="leadership-date">Sep 2023 – Mar 2025</span>
+                </div>
+                <div className="leadership-item">
+                  <span className="leadership-title">SCIAC All-Academic Team</span>
+                  <span className="leadership-date">Awarded 2024, 2025</span>
+                </div>
+                <div className="leadership-item">
+                  <span className="leadership-title">Caltech Summer Undergraduate Research Fellowship (SURF)</span>
+                  <span className="leadership-date">Awarded 2024</span>
+                </div>
+              </div>
             </div>
 
             {/* Work Experience Timeline */}
@@ -579,6 +566,15 @@ const Website: React.FC = () => {
               <div className="experience-timeline-content">
                 <div className="timeline-items-container">
                   <div className="timeline-line"></div>
+
+                  <div className="experience-timeline-item">
+                    <div className="experience-timeline-dot"></div>
+                    <div className="experience-timeline-details">
+                      <h4>Rox - Foundations Engineer Intern</h4>
+                      <p className="experience-timeline-date">September 2026 - December 2026</p>
+                      <p className="experience-timeline-description">Incoming Fall 2026. Working on Agents.</p>
+                    </div>
+                  </div>
 
                   <div className="experience-timeline-item">
                     <div className="experience-timeline-dot"></div>
