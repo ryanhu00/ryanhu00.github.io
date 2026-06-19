@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.fd462831.css",
+    "main.css": "/static/css/main.e2182698.css",
     "main.js": "/static/js/main.c8e3bed7.js",
     "static/js/453.fa03fbbd.chunk.js": "/static/js/453.fa03fbbd.chunk.js",
     "static/media/visual_anemometry.png": "/static/media/visual_anemometry.82ecee6066cf530e1f7d.png",
@@ -31,12 +31,12 @@
     "static/media/Javascript_logo.png": "/static/media/Javascript_logo.266bd9fb2663dcc057b4.png",
     "static/media/Java_logo.png": "/static/media/Java_logo.6c64373d3b7415758078.png",
     "index.html": "/index.html",
-    "main.fd462831.css.map": "/static/css/main.fd462831.css.map",
+    "main.e2182698.css.map": "/static/css/main.e2182698.css.map",
     "main.c8e3bed7.js.map": "/static/js/main.c8e3bed7.js.map",
     "453.fa03fbbd.chunk.js.map": "/static/js/453.fa03fbbd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fd462831.css",
+    "static/css/main.e2182698.css",
     "static/js/main.c8e3bed7.js"
   ]
 }
