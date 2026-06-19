@@ -994,8 +994,8 @@ const Website: React.FC = () => {
         {/* Footer Text */}
         <div className="footer-content">
           <p className="footer-description">
-            Website built with <strong>React.js</strong> and <strong>TypeScript</strong>. Experience and project section layouts based on <strong>React-Grid-Layout</strong>. 
-            <br></br>Background inspired by <strong>crnacura's <a href="https://github.com/crnacura/AmbientCanvasBackgrounds" style={{ color: isDarkMode ? 'white' : 'black' }}> AmbientCanvasBackgrounds </a></strong>. </p>
+            Website built with <strong>React.js</strong> and <strong>TypeScript</strong>. Project section layout based on <strong>React-Grid-Layout</strong>. 
+          </p>
           <p className="footer-copyright">
             <strong>© 2026 Ryan R. Hu.</strong>
           </p>
