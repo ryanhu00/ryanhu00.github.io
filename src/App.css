@@ -368,18 +368,22 @@ body.dark-mode {
   padding: clamp(0.35rem, 0.5vw, 0.5rem) clamp(0.8rem, 1vw, 1.2rem);
   display: flex;
   align-items: center;
+  max-width: calc(100vw - 24px);
+  box-sizing: border-box;
 }
 
 .pill-navbar-inner {
   display: flex;
   align-items: center;
   width: 100%;
+  min-width: 0;
 }
 
 .pill-navbar-logo {
   height: clamp(34px, 3.5vw, 48px);
   width: auto;
   margin-right: clamp(1.2rem, 1.8vw, 2.2rem);
+  flex-shrink: 0;
 }
 
 .pill-navbar-links {
@@ -389,6 +393,8 @@ body.dark-mode {
   margin: 0;
   padding: 0;
   align-items: center;
+  flex-wrap: nowrap;
+  min-width: 0;
 }
 
 .pill-navbar-link {
@@ -403,6 +409,7 @@ body.dark-mode {
   border-radius: 2rem;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
 }
 
 .pill-navbar-link.active {
@@ -1396,6 +1403,42 @@ body.dark-mode {
 @media (max-width: 768px) {
   .project-image-container {
     height: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .pill-navbar {
+    padding: 0.3rem 0.5rem;
+  }
+
+  .pill-navbar-logo {
+    height: 28px;
+    margin-right: 0.6rem;
+  }
+
+  .pill-navbar-links {
+    gap: 0.1rem;
+  }
+
+  .pill-navbar-link {
+    font-size: 0.82rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .pill-navbar {
+    padding: 0.25rem 0.4rem;
+  }
+
+  .pill-navbar-logo {
+    height: 24px;
+    margin-right: 0.4rem;
+  }
+
+  .pill-navbar-link {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
   }
 }
 
