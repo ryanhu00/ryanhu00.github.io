@@ -20,12 +20,9 @@ const AmbientBackground: React.FC = () => {
     const rangeHue = 30;
     const lightBackgroundColor = 'hsla(0,0%,100%,1)';
     const darkBackgroundColor = 'hsla(60,50%,3%,1)';
-    const HALF_PI = Math.PI / 2;
-
     // Variables
     let canvas: { a: HTMLCanvasElement; b: HTMLCanvasElement };
     let ctx: { a: CanvasRenderingContext2D; b: CanvasRenderingContext2D };
-    let center: number[];
     let particleProps: Float32Array;
     let animationId: number;
 
@@ -38,8 +35,7 @@ const AmbientBackground: React.FC = () => {
     const rand = (n: number) => Math.random() * n;
     const cos = (n: number) => Math.cos(n);
     const sin = (n: number) => Math.sin(n);
-    const angle = (x1: number, y1: number, x2: number, y2: number) => Math.atan2(y2 - y1, x2 - x1);
-    const lerp = (start: number, end: number, amt: number) => start + (end - start) * amt;
+    const TAU = 2 * Math.PI;
     const fadeInOut = (life: number, ttl: number) => {
       const half = ttl * 0.5;
       return life < half ? life / half : 1 - (life - half) / half;
@@ -62,7 +58,6 @@ const AmbientBackground: React.FC = () => {
         a: canvas.a.getContext('2d')!,
         b: canvas.b.getContext('2d')!
       };
-      center = [];
     }
 
     function resize() {
@@ -78,8 +73,6 @@ const AmbientBackground: React.FC = () => {
       
       ctx.b.drawImage(canvas.a, 0, 0);
 
-      center[0] = 0.5 * canvas.a.width;
-      center[1] = 0.5 * canvas.a.height;
     }
 
     function initParticles() {
@@ -93,13 +86,13 @@ const AmbientBackground: React.FC = () => {
     }
 
     function initParticle(i: number) {
-      let theta: number, x: number, y: number, vx: number, vy: number, life: number, ttl: number, speed: number, size: number, hue: number;
+      let x: number, y: number, vx: number, vy: number, life: number, ttl: number, speed: number, size: number, hue: number;
 
       x = rand(canvas.a.width);
       y = rand(canvas.a.height);
-      theta = angle(x, y, center[0], center[1]);
-      vx = cos(theta) * 6;
-      vy = sin(theta) * 6;
+      const theta = rand(TAU);
+      vx = cos(theta);
+      vy = sin(theta);
       life = 0;
       ttl = baseTTL + rand(rangeTTL);
       speed = baseSpeed + rand(rangeSpeed);
@@ -127,21 +120,27 @@ const AmbientBackground: React.FC = () => {
 
     function updateParticle(i: number) {
       let i2=1+i, i3=2+i, i4=3+i, i5=4+i, i6=5+i, i7=6+i, i8=7+i, i9=8+i;
-      let x: number, y: number, theta: number, vx: number, vy: number, life: number, ttl: number, speed: number, x2: number, y2: number, size: number, hue: number;
+      let x: number, y: number, vx: number, vy: number, life: number, ttl: number, speed: number, x2: number, y2: number, size: number, hue: number;
 
       x = particleProps[i];
       y = particleProps[i2];
-      theta = angle(x, y, center[0], center[1]) + 0.75 * HALF_PI;
-      vx = lerp(particleProps[i3], 2 * cos(theta), 0.05);
-      vy = lerp(particleProps[i4], 2 * sin(theta), 0.05);
+      vx = particleProps[i3];
+      vy = particleProps[i4];
       life = particleProps[i5];
       ttl = particleProps[i6];
       speed = particleProps[i7];
-      x2 = x + vx * speed;
-      y2 = y + vy * speed;
       size = particleProps[i8];
       hue = particleProps[i9];
 
+      const drift = (Math.random() - 0.5) * 0.08;
+      const currentAngle = Math.atan2(vy, vx) + drift;
+      vx = cos(currentAngle);
+      vy = sin(currentAngle);
+
+      x2 = x + vx * speed;
+      y2 = y + vy * speed;
+
+      const theta = currentAngle;
       drawParticle(x, y, theta, life, ttl, size, hue);
 
       life++;
@@ -151,6 +150,12 @@ const AmbientBackground: React.FC = () => {
       particleProps[i3] = vx;
       particleProps[i4] = vy;
       particleProps[i5] = life;
+
+      const margin = size;
+      if (x2 < -margin) particleProps[i] = canvas.a.width + margin;
+      if (x2 > canvas.a.width + margin) particleProps[i] = -margin;
+      if (y2 < -margin) particleProps[i2] = canvas.a.height + margin;
+      if (y2 > canvas.a.height + margin) particleProps[i2] = -margin;
 
       if (life > ttl) {
         initParticle(i);
