@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.e2182698.css",
-    "main.js": "/static/js/main.241ee385.js",
+    "main.css": "/static/css/main.65d7c628.css",
+    "main.js": "/static/js/main.05cfab7a.js",
     "static/js/453.fa03fbbd.chunk.js": "/static/js/453.fa03fbbd.chunk.js",
     "static/media/visual_anemometry.png": "/static/media/visual_anemometry.82ecee6066cf530e1f7d.png",
     "static/media/stock_trading.jpg": "/static/media/stock_trading.9107af061b85ab9bf049.jpg",
@@ -25,18 +25,19 @@
     "static/media/C++_logo.png": "/static/media/C++_logo.fd742c3fee24cf600c83.png",
     "static/media/C_logo.png": "/static/media/C_logo.bbbbbabc8c191bfb99bf.png",
     "static/media/tinylm.png": "/static/media/tinylm.315daffc978ed1e4a3c2.png",
+    "static/media/OCaml_logo.png": "/static/media/OCaml_logo.22999f95f906c0ae99ff.png",
     "static/media/numpy_logo.png": "/static/media/numpy_logo.ad6ce4268be9e06f8cb4.png",
     "static/media/opencv_logo.png": "/static/media/opencv_logo.619323d409ecad2e7c1b.png",
     "static/media/react_logo.png": "/static/media/react_logo.98ff38735baa4c1b0381.png",
     "static/media/Javascript_logo.png": "/static/media/Javascript_logo.266bd9fb2663dcc057b4.png",
     "static/media/Java_logo.png": "/static/media/Java_logo.6c64373d3b7415758078.png",
     "index.html": "/index.html",
-    "main.e2182698.css.map": "/static/css/main.e2182698.css.map",
-    "main.241ee385.js.map": "/static/js/main.241ee385.js.map",
+    "main.65d7c628.css.map": "/static/css/main.65d7c628.css.map",
+    "main.05cfab7a.js.map": "/static/js/main.05cfab7a.js.map",
     "453.fa03fbbd.chunk.js.map": "/static/js/453.fa03fbbd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e2182698.css",
-    "static/js/main.241ee385.js"
+    "static/css/main.65d7c628.css",
+    "static/js/main.05cfab7a.js"
   ]
 }
