@@ -1,0 +1,32 @@
+:root {
+  --font-sans: 'Satoshi', 'Segoe UI', system-ui, sans-serif;
+}
+
+html {
+  font-family: var(--font-sans);
+}
+
+body {
+  margin: 0;
+  font-family: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: hsla(0, 0%, 100%, 1);
+  overflow-x: hidden;
+}
+
+body.dark-mode {
+  background: hsla(60, 50%, 3%, 1);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+#root,
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}

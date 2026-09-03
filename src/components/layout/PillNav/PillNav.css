@@ -1,0 +1,210 @@
+.pill-nav-container {
+  position: fixed;
+  top: var(--nav-top, 1.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3000;
+  width: max-content;
+  max-width: calc(100vw - 24px);
+}
+
+.pill-nav {
+  --logo-h: clamp(28px, 3.5vw, 48px);
+  --pill-pad-x: clamp(0.85rem, 1.5vw, 1.8rem);
+  --pill-pad-y: clamp(0.35rem, 0.5vw, 0.5rem);
+  --pill-gap: clamp(0.15rem, 0.5vw, 0.5rem);
+  --nav-font: clamp(0.85rem, 1.2vw, 1.35rem);
+
+  display: flex;
+  align-items: center;
+  gap: clamp(0.45rem, 1.2vw, 1.4rem);
+  width: max-content;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0.375rem;
+  border-radius: 2.5rem;
+  background: var(--base, #fff);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.06);
+  border: 1px solid color-mix(in srgb, var(--pill-bg, #111) 8%, transparent);
+}
+
+.pill-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  text-decoration: none;
+  line-height: 0;
+}
+
+.pill-logo img {
+  height: var(--logo-h);
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.pill-nav-items {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.pill-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: var(--pill-gap);
+  margin: 0;
+  padding: 0;
+}
+
+.pill-list > li {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: var(--pill-pad-y) var(--pill-pad-x);
+  background: var(--pill-bg, transparent);
+  color: var(--pill-text, #111);
+  text-decoration: none;
+  border-radius: 2rem;
+  box-sizing: border-box;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: var(--nav-font);
+  line-height: 1.15;
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: nowrap;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.2s ease;
+}
+
+.pill .hover-circle {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  border-radius: 50%;
+  background: #f7f7f7;
+  z-index: 1;
+  display: block;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.pill-nav.is-dark .pill .hover-circle {
+  background: #444;
+}
+
+.pill .label-stack {
+  position: relative;
+  display: grid;
+  place-items: center;
+  line-height: 1.15;
+  z-index: 2;
+}
+
+.pill .pill-label,
+.pill .pill-label-hover {
+  grid-area: 1 / 1;
+  display: block;
+  line-height: 1.15;
+  text-align: center;
+  will-change: transform, opacity;
+}
+
+.pill .pill-label {
+  position: relative;
+  z-index: 2;
+}
+
+.pill .pill-label-hover {
+  position: relative;
+  color: var(--hover-text, #ff6c0c);
+  z-index: 3;
+  opacity: 0;
+}
+
+.pill.is-active {
+  background: #f2f2f2;
+  color: var(--pill-text, #111);
+}
+
+.pill.is-active .pill-label {
+  color: var(--pill-text, #111);
+}
+
+.pill-nav.is-dark .pill.is-active {
+  background: #555555;
+  color: #ffffff;
+}
+
+.pill-nav.is-dark .pill.is-active .pill-label {
+  color: #ffffff;
+}
+
+/* Keep hover wipe from fighting the active fill */
+.pill.is-active .hover-circle {
+  background: #eaeaea;
+}
+
+.pill-nav.is-dark .pill.is-active .hover-circle {
+  background: #666666;
+}
+
+.pill-right-slot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-left: clamp(0.1rem, 0.5vw, 0.35rem);
+}
+
+.pill-right-slot .dark-mode-toggle {
+  width: clamp(32px, 3.2vw, 42px);
+  height: clamp(32px, 3.2vw, 42px);
+  border-radius: 2rem;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--pill-text, #111);
+}
+
+.pill-right-slot .dark-mode-toggle:hover {
+  background: #f7f7f7;
+}
+
+.pill-nav.is-dark .pill-right-slot .dark-mode-toggle {
+  color: #fff;
+}
+
+.pill-nav.is-dark .pill-right-slot .dark-mode-toggle:hover {
+  background: #444;
+}
+
+.pill-right-slot .dark-mode-toggle svg {
+  width: clamp(16px, 1.4vw, 22px);
+  height: clamp(16px, 1.4vw, 22px);
+}
+
+@media (max-width: 480px) {
+  .pill-nav {
+    gap: 0.3rem;
+    padding: 0.3rem 0.5rem;
+  }
+
+  .pill {
+    padding: 0.32rem 0.7rem;
+  }
+}

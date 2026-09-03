@@ -1,0 +1,212 @@
+.bento-section {
+  --bento-border: var(--border);
+  --bento-bg: var(--surface);
+  --purple-glow: rgba(187, 128, 224, 0.22);
+  position: relative;
+}
+
+.card-grid {
+  display: grid;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.magic-bento-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-height: 0;
+  padding: 1.15rem 1.2rem;
+  border-radius: 20px;
+  border: 1px solid var(--bento-border);
+  background: var(--bento-bg);
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: box-shadow 0.3s ease;
+
+  --glow-x: 50%;
+  --glow-y: 50%;
+  --glow-intensity: 0;
+  --glow-radius: 200px;
+  --glow-color: 187, 128, 224;
+}
+
+.magic-bento-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+  position: relative;
+  z-index: 2;
+}
+
+.magic-bento-card__label {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--purple);
+}
+
+.magic-bento-card__body {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.magic-bento-card--border-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 6px;
+  background: radial-gradient(
+    var(--glow-radius) circle at var(--glow-x) var(--glow-y),
+    rgba(var(--glow-color), calc(var(--glow-intensity) * 0.8)) 0%,
+    rgba(var(--glow-color), calc(var(--glow-intensity) * 0.4)) 30%,
+    transparent 60%
+  );
+  border-radius: inherit;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 1;
+  z-index: 1;
+}
+
+.magic-bento-card--border-glow:hover {
+  box-shadow:
+    0 2px 10px rgba(46, 24, 78, 0.08),
+    0 0 14px rgba(187, 128, 224, 0.1);
+}
+
+.particle-container {
+  position: relative;
+}
+
+.global-spotlight {
+  mix-blend-mode: screen;
+  will-change: transform, opacity;
+  z-index: 200 !important;
+  pointer-events: none;
+}
+
+.experience-bento {
+  grid-template-columns: 1fr;
+}
+
+.experience-card--work {
+  order: 1;
+}
+
+.experience-card--tech {
+  order: 2;
+}
+
+.experience-card--leadership {
+  order: 3;
+}
+
+.experience-card--work {
+  max-height: 34rem;
+}
+
+.experience-card--work .magic-bento-card__body {
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) transparent;
+}
+
+.experience-card--work .magic-bento-card__body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.experience-card--work .magic-bento-card__body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.experience-card--work .magic-bento-card__body::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.experience-card--work .magic-bento-card__body::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.experience-card--work .magic-bento-card__body::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.experience-card--tech {
+  overflow: visible;
+  z-index: 2;
+  min-height: 0;
+}
+
+.experience-card--leadership .magic-bento-card__body {
+  overflow: visible;
+}
+
+.experience-card--leadership .plain-list {
+  gap: 0.65rem;
+}
+
+.experience-card--leadership .plain-list li {
+  padding-bottom: 0.55rem;
+}
+
+@media (min-width: 900px) {
+  .experience-bento {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    grid-template-rows: minmax(0, 1fr) auto;
+    height: 44rem;
+  }
+
+  .experience-card--tech,
+  .experience-card--leadership,
+  .experience-card--work {
+    order: 0;
+  }
+
+  .experience-card--tech {
+    grid-column: 1;
+    grid-row: 1;
+    min-height: 0;
+    height: 100%;
+    overflow: visible;
+  }
+
+  .experience-card--tech .magic-bento-card__body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .experience-card--leadership {
+    grid-column: 1;
+    grid-row: 2;
+    min-height: 0;
+    height: auto;
+  }
+
+  .experience-card--work {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    max-height: none;
+    height: 100%;
+    min-height: 0;
+  }
+}
