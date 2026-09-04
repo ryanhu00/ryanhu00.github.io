@@ -12,13 +12,9 @@ interface ShinyTextProps {
   spread?: number;
   yoyo?: boolean;
   pauseOnHover?: boolean;
-  /** Only shine while hovered */
   shineOnHover?: boolean;
-  /** Localize shine to the cursor (use with shineOnHover) */
   followCursor?: boolean;
-  /** How wide the cursor shine band is, as % of text width */
   cursorShineWidth?: number;
-  /** Optional hot core at the cursor (great for dark mode contrast) */
   shineCoreColor?: string;
   direction?: 'left' | 'right';
   delay?: number;
