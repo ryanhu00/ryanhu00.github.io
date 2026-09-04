@@ -74,7 +74,7 @@ export const about = {
   caltechHighlight: 'Caltech',
   pfp,
   resume: {
-    updated: 'June 2026',
+    updated: 'September 2026',
     href: '/Ryan_Hu_Resume.pdf',
   },
 };

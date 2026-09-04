@@ -1,9 +1,9 @@
 import React, { useCallback, useState } from 'react';
 import Section from '../layout/Section';
 import MagicBento from '../ui/MagicBento/MagicBento';
+import GlowBox from '../ui/BorderGlow/GlowBox';
 import LogoLoop, { LogoItem } from '../ui/LogoLoop/LogoLoop';
 import { leadership, techData, workExperience, type TechItem } from '../../data/content';
-import { useTheme } from '../layout/theme';
 
 const toLogoItems = (items: TechItem[]): LogoItem[] =>
   items.map((item) => ({
@@ -49,7 +49,6 @@ const TechColumn: React.FC<{
 );
 
 const Experience: React.FC = () => {
-  const { isDarkMode } = useTheme();
   const [tip, setTip] = useState<{ name: string; x: number; y: number } | null>(null);
 
   const handleTechMove = useCallback((event: React.MouseEvent<HTMLDivElement>) => {
@@ -76,12 +75,12 @@ const Experience: React.FC = () => {
         enableSpotlight={false}
         enableTilt={false}
         enableStars={false}
+        enableBorderGlow={false}
         enableMagnetism
         spotlightRadius={290}
         clickEffect={false}
-        glowColor={isDarkMode ? '187, 128, 224' : '139, 79, 184'}
       >
-        <article className="magic-bento-card experience-card--tech">
+        <GlowBox className="magic-bento-card experience-card--tech" borderRadius={20}>
           <div className="magic-bento-card__header">
             <h3 className="magic-bento-card__label">Tech Stack</h3>
           </div>
@@ -96,9 +95,9 @@ const Experience: React.FC = () => {
               <TechColumn label="Frameworks" items={techData.frameworks} direction="up" speed={48} />
             </div>
           </div>
-        </article>
+        </GlowBox>
 
-        <article className="magic-bento-card experience-card--leadership">
+        <GlowBox className="magic-bento-card experience-card--leadership" borderRadius={20}>
           <div className="magic-bento-card__header">
             <h3 className="magic-bento-card__label">Leadership, Activities, & Awards</h3>
           </div>
@@ -112,13 +111,16 @@ const Experience: React.FC = () => {
               ))}
             </ul>
           </div>
-        </article>
+        </GlowBox>
 
-        <article className="magic-bento-card experience-card--work" data-lenis-prevent>
+        <GlowBox
+          className="magic-bento-card experience-card--work"
+          borderRadius={20}
+        >
           <div className="magic-bento-card__header">
             <h3 className="magic-bento-card__label">Work Experience</h3>
           </div>
-          <div className="magic-bento-card__body">
+          <div className="magic-bento-card__body" data-lenis-prevent>
             <ul className="plain-list work-list">
               {workExperience.map((item) => (
                 <li key={`${item.title}-${item.date}`}>
@@ -129,7 +131,7 @@ const Experience: React.FC = () => {
               ))}
             </ul>
           </div>
-        </article>
+        </GlowBox>
       </MagicBento>
 
       {tip ? (

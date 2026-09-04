@@ -1,9 +1,10 @@
 import React from 'react';
+import GlowBox from '../ui/BorderGlow/GlowBox';
 import { about } from '../../data/content';
 
 const ResumeCard: React.FC = () => {
   return (
-    <div className="resume-card">
+    <GlowBox className="resume-card" borderRadius={16} glowRadius={22} fillOpacity={0.28}>
       <div className="resume-card-text">
         <span className="resume-card-meta">Last updated {about.resume.updated}</span>
         <span className="resume-card-title">Resume</span>
@@ -52,7 +53,7 @@ const ResumeCard: React.FC = () => {
           </svg>
         </a>
       </div>
-    </div>
+    </GlowBox>
   );
 };
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Layouts, WidthProvider, Responsive } from 'react-grid-layout';
 import Section from '../layout/Section';
+import GlowBox from '../ui/BorderGlow/GlowBox';
 import { projects } from '../../data/content';
 
 const ResponsiveGrid = WidthProvider(Responsive);
@@ -78,7 +79,7 @@ const Projects: React.FC = () => {
       >
         {projects.map((project) => (
           <div key={project.id}>
-            <div className="project-card">
+            <GlowBox className="project-card" borderRadius={20}>
               <div className="project-card-content">
                 <div className="project-image-container">
                   {project.media.type === 'video' ? (
@@ -133,7 +134,7 @@ const Projects: React.FC = () => {
                   ) : null}
                 </div>
               </div>
-            </div>
+            </GlowBox>
           </div>
         ))}
       </ResponsiveGrid>

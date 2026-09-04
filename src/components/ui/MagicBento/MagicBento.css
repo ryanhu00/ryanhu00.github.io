@@ -34,6 +34,22 @@
   --glow-color: 187, 128, 224;
 }
 
+.border-glow-card.magic-bento-card {
+  padding: 0;
+  overflow: visible;
+  background: var(--card-bg);
+  border-color: var(--border);
+  backdrop-filter: blur(8px);
+}
+
+.border-glow-card.magic-bento-card .border-glow-inner {
+  padding: 1.15rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
 .magic-bento-card__header {
   display: flex;
   justify-content: space-between;
@@ -102,6 +118,7 @@
 
 .experience-bento {
   grid-template-columns: 1fr;
+  overflow: visible;
 }
 
 .experience-card--work {
