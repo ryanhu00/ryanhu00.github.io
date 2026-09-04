@@ -44,7 +44,7 @@ const HeroHeadline: React.FC<{ text: string }> = ({ text }) => {
       text={text}
       animateOn="view"
       sequential
-      speed={42}
+      speed={68}
       revealDirection="start"
       parentClassName="hero-headline-line"
       className="hero-decrypted"
