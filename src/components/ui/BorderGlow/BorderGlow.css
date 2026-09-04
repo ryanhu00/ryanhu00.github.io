@@ -24,7 +24,6 @@
   box-shadow: none;
 }
 
-/* Light surfaces: multiply keeps purple/orange/blue readable on white */
 .border-glow-card--light::after,
 .border-glow-card--light > .edge-light {
   mix-blend-mode: multiply;
