@@ -16,14 +16,15 @@
   /*
    * Resizing tokens mirrored from rbp-portfolio:
    * nav: fixed top-6
-   * hero shell: max-w-275 px-6 pt-44 pb-24 sm:px-10 sm:pt-56 sm:pb-32
-   * main gaps: gap-20 sm:gap-28
+   * hero shell: max-w-275 px-6 pt-44 sm:px-10 sm:pt-56
+   * section rhythm: gap-20 sm:gap-28 (hero bottom padding omitted so
+   * flex gap alone spaces Hero → Experience → Projects → Footer)
    */
   --nav-top: 1.5rem; /* top-6 */
   --page-max: 68.75rem; /* max-w-275 */
   --page-px: 1.5rem; /* px-6 */
   --hero-pt: 11rem; /* pt-44 */
-  --hero-pb: 6rem; /* pb-24 */
+  --hero-pb: 0;
   --section-gap: 5rem; /* gap-20 */
   --nav-offset: var(--hero-pt);
 }
@@ -32,7 +33,6 @@
   :root {
     --page-px: 2.5rem; /* sm:px-10 */
     --hero-pt: 14rem; /* sm:pt-56 */
-    --hero-pb: 8rem; /* sm:pb-32 */
     --section-gap: 7rem; /* sm:gap-28 */
   }
 }
@@ -754,7 +754,7 @@ html.lenis body {
   width: 100%;
   max-width: var(--page-max);
   margin: 0 auto;
-  padding: 2rem var(--page-px) 3rem;
+  padding: var(--section-gap) var(--page-px) 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
