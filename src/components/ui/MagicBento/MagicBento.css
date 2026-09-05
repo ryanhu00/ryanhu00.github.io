@@ -133,6 +133,18 @@
   order: 3;
 }
 
+.experience-card--education {
+  order: 4;
+}
+
+.experience-right-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  order: 1;
+  min-height: 0;
+}
+
 .experience-card--work {
   max-height: 34rem;
 }
@@ -186,6 +198,51 @@
   padding-bottom: 0.55rem;
 }
 
+.education-entry h4 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.education-entry__date {
+  margin: 0 0 0.4rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--purple);
+}
+
+.education-entry__degree {
+  margin: 0 0 0.55rem;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.education-entry__detail {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.education-entry__detail-label {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Education must hug content — override bento/glow height:100% fill */
+.border-glow-card.magic-bento-card.experience-card--education,
+.experience-card--education .border-glow-inner {
+  height: auto !important;
+  min-height: 0;
+}
+
+.experience-card--education .magic-bento-card__body {
+  flex: 0 0 auto;
+}
+
 @media (min-width: 900px) {
   .experience-bento {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
@@ -193,9 +250,16 @@
     height: 44rem;
   }
 
+  .experience-right-stack {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    order: 0;
+    height: 100%;
+    min-height: 0;
+  }
+
   .experience-card--tech,
-  .experience-card--leadership,
-  .experience-card--work {
+  .experience-card--leadership {
     order: 0;
   }
 
@@ -220,10 +284,13 @@
   }
 
   .experience-card--work {
-    grid-column: 2;
-    grid-row: 1 / span 2;
+    flex: 1 1 0;
     max-height: none;
-    height: 100%;
     min-height: 0;
+    height: auto;
+  }
+
+  .experience-card--education {
+    flex: 0 0 auto;
   }
 }

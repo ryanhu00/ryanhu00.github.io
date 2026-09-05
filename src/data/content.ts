@@ -129,6 +129,27 @@ export const leadership = [
   { title: 'Caltech Summer Undergraduate Research Fellowship (SURF)', date: 'Awarded 2024' },
 ];
 
+export type EducationItem = {
+  school: string;
+  date: string;
+  degree: string;
+  details: { label?: string; text: string }[];
+};
+
+export const education: EducationItem[] = [
+  {
+    school: 'California Institute of Technology (Caltech)',
+    date: '2023 - 2027',
+    degree: 'Bachelor of Science in Computer Science - 4.2/4.0 GPA',
+    details: [
+      {
+        label: 'Relevant Coursework',
+        text: 'Software Design, Deep Learning, Learning Systems, Machine Learning & Data Mining, GPU Programming, Algorithms, Computing Systems, Diffusion Models, Differential Equations, Probability & Statistics, Probability Models',
+      },
+    ],
+  },
+];
+
 export const workExperience = [
   {
     title: 'Rox - Foundations Engineer Intern',

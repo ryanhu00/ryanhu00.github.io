@@ -266,6 +266,30 @@ html.lenis body {
   color: color-mix(in srgb, var(--text) 65%, transparent);
 }
 
+.hero-gallery-link {
+  display: inline-flex;
+  margin-top: 0.15rem;
+  text-decoration: none;
+  max-width: 100%;
+}
+
+.hero-gallery-link:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+  border-radius: 0.4rem;
+}
+
+.hero-gallery-gradient.animated-gradient-text {
+  margin: 0;
+  backdrop-filter: none;
+  border-radius: 0;
+  overflow: visible;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.35;
+}
+
 .hero-socials {
   margin-top: 0.25rem;
 }
@@ -781,4 +805,244 @@ html.lenis body {
 .footer-copyright strong {
   color: var(--text);
   font-weight: 600;
+}
+
+/* Photos page — always dark + WebThreads */
+.photos-page {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  background: #000000;
+  color: #f3eee6;
+  --text: #f2f0ea;
+  --text-muted: #b5b0a6;
+  --border: rgba(242, 240, 234, 0.14);
+}
+
+.photos-page .site-footer {
+  position: relative;
+  z-index: 1;
+}
+
+.photos-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.photos-bg .web-threads-container {
+  width: 100%;
+  height: 100%;
+}
+
+.photos-topbar,
+.photos-main {
+  position: relative;
+  z-index: 1;
+}
+
+.photos-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  width: 100%;
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 1.1rem var(--page-px);
+  background: transparent;
+}
+
+.photos-home-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+  color: #f3eee6;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.photos-home-link img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+}
+
+.photos-home-link:hover {
+  color: #bb80e0;
+}
+
+.photos-main {
+  padding-top: 1rem;
+}
+
+.photos-shell {
+  width: 100%;
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 0 var(--page-px) 4rem;
+}
+
+.photos-title {
+  margin: 0 0 0.65rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: #f3eee6;
+}
+
+.photos-lede {
+  margin: 0 0 2rem;
+  max-width: 40ch;
+  font-size: 1.1rem;
+  line-height: 1.45;
+  color: rgba(243, 238, 230, 0.62);
+}
+
+.photos-folders {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.75rem 3.5rem;
+  padding: 2.5rem 0 1.5rem;
+}
+
+.photos-folder-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.35rem;
+  min-width: 7.5rem;
+}
+
+.photos-folder-label {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: rgba(243, 238, 230, 0.88);
+}
+
+.photos-folder-thumb {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.photos-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+}
+
+.photos-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  pointer-events: none;
+}
+
+.photos-modal-panel {
+  position: relative;
+  z-index: 1;
+  width: min(960px, 100%);
+  max-height: min(85vh, 52rem);
+  overflow: auto;
+  padding: 0.25rem;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  overscroll-behavior: contain;
+}
+
+.photos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10.5rem, 1fr));
+  gap: 0.75rem;
+}
+
+.photos-grid-item {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  aspect-ratio: 1;
+  border-radius: 0.85rem;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.06);
+  cursor: zoom-in;
+  display: block;
+  width: 100%;
+}
+
+.photos-grid-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photos-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  cursor: zoom-out;
+}
+
+.photos-lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  pointer-events: none;
+}
+
+.photos-lightbox-image {
+  position: relative;
+  z-index: 1;
+  max-width: min(92vw, 1100px);
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0.75rem;
+  cursor: default;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+}
+
+@media (max-width: 640px) {
+  .photos-folders {
+    gap: 2.25rem 2rem;
+    padding-top: 1.75rem;
+  }
+
+  .photos-modal {
+    padding: 1rem;
+  }
+
+  .photos-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem;
+  }
+
+  .photos-lightbox {
+    padding: 0.85rem;
+  }
 }

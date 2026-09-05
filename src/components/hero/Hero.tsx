@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import ResumeCard from './ResumeCard';
 import SocialDock from './SocialDock';
 import GlowBox from '../ui/BorderGlow/GlowBox';
 import DecryptedText from '../ui/DecryptedText/DecryptedText';
 import ShinyText from '../ui/ShinyText/ShinyText';
+import GradientText from '../ui/GradientText/GradientText';
 import { useTheme } from '../layout/theme';
 import { about } from '../../data/content';
+
+const GALLERY_GRADIENT = ['#bb80e0', '#e87a2f', '#89CFF0', '#bb80e0'];
 
 /** Survives Strict Mode remounts — decrypt only once per page load */
 let headlineUnlocked = false;
@@ -87,6 +91,17 @@ const Hero: React.FC = () => {
               ))}
             </h1>
             <p className="hero-supporting">{renderSupporting()}</p>
+
+            <Link to="/photos" className="hero-gallery-link">
+              <GradientText
+                colors={GALLERY_GRADIENT}
+                animationSpeed={10}
+                showBorder={false}
+                className="hero-gallery-gradient"
+              >
+                Check out my photo gallery →
+              </GradientText>
+            </Link>
 
             <ResumeCard />
             <div className="hero-socials-mobile">

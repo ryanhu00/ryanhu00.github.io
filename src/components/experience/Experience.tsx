@@ -3,7 +3,7 @@ import Section from '../layout/Section';
 import MagicBento from '../ui/MagicBento/MagicBento';
 import GlowBox from '../ui/BorderGlow/GlowBox';
 import LogoLoop, { LogoItem } from '../ui/LogoLoop/LogoLoop';
-import { leadership, techData, workExperience, type TechItem } from '../../data/content';
+import { education, leadership, techData, workExperience, type TechItem } from '../../data/content';
 
 const toLogoItems = (items: TechItem[]): LogoItem[] =>
   items.map((item) => ({
@@ -113,25 +113,56 @@ const Experience: React.FC = () => {
           </div>
         </GlowBox>
 
-        <GlowBox
-          className="magic-bento-card experience-card--work"
-          borderRadius={20}
-        >
-          <div className="magic-bento-card__header">
-            <h3 className="magic-bento-card__label">Work Experience</h3>
-          </div>
-          <div className="magic-bento-card__body" data-lenis-prevent>
-            <ul className="plain-list work-list">
-              {workExperience.map((item) => (
-                <li key={`${item.title}-${item.date}`}>
-                  <span className="list-title">{item.title}</span>
-                  <span className="list-meta">{item.date}</span>
-                  <p>{item.description}</p>
-                </li>
+        <div className="experience-right-stack">
+          <GlowBox className="magic-bento-card experience-card--work" borderRadius={20}>
+            <div className="magic-bento-card__header">
+              <h3 className="magic-bento-card__label">Work Experience</h3>
+            </div>
+            <div className="magic-bento-card__body" data-lenis-prevent>
+              <ul className="plain-list work-list">
+                {workExperience.map((item) => (
+                  <li key={`${item.title}-${item.date}`}>
+                    <span className="list-title">{item.title}</span>
+                    <span className="list-meta">{item.date}</span>
+                    <p>{item.description}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </GlowBox>
+
+          <GlowBox className="magic-bento-card experience-card--education" borderRadius={20}>
+            <div className="magic-bento-card__header">
+              <h3 className="magic-bento-card__label">Education</h3>
+            </div>
+            <div className="magic-bento-card__body">
+              {education.map((item) => (
+                <article key={item.school} className="education-entry">
+                  <h4>{item.school}</h4>
+                  <p className="education-entry__date">{item.date}</p>
+                  <p className="education-entry__degree">
+                    <em>{item.degree}</em>
+                  </p>
+                  {item.details.map((detail) => (
+                    <p
+                      key={`${item.school}-${detail.label || detail.text}`}
+                      className="education-entry__detail"
+                    >
+                      {detail.label ? (
+                        <>
+                          <span className="education-entry__detail-label">{detail.label}:</span>{' '}
+                          {detail.text}
+                        </>
+                      ) : (
+                        detail.text
+                      )}
+                    </p>
+                  ))}
+                </article>
               ))}
-            </ul>
-          </div>
-        </GlowBox>
+            </div>
+          </GlowBox>
+        </div>
       </MagicBento>
 
       {tip ? (
