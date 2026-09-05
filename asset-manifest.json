@@ -1,13 +1,32 @@
 {
   "files": {
-    "main.css": "/static/css/main.ffb5115e.css",
-    "main.js": "/static/js/main.80d06373.js",
+    "main.css": "/static/css/main.24e5b18d.css",
+    "main.js": "/static/js/main.f638c243.js",
     "static/js/453.fa03fbbd.chunk.js": "/static/js/453.fa03fbbd.chunk.js",
+    "static/media/IMG_1034.jpg": "/static/media/IMG_1034.81fce97a8422a5103991.jpg",
     "static/media/visual_anemometry.png": "/static/media/visual_anemometry.82ecee6066cf530e1f7d.png",
+    "static/media/IMG_4367.jpg": "/static/media/IMG_4367.8b6b742dbb15a4bdc3ea.jpg",
     "static/media/stock_trading.jpg": "/static/media/stock_trading.9107af061b85ab9bf049.jpg",
     "static/media/pfp.png": "/static/media/pfp.38c48dfad5de8dccecd8.png",
+    "static/media/IMG_1732.jpg": "/static/media/IMG_1732.7438fc6963b674c30249.jpg",
+    "static/media/IMG_7922.jpg": "/static/media/IMG_7922.099ed378dcced9900a0c.jpg",
+    "static/media/IMG_3794.jpg": "/static/media/IMG_3794.0a1b4f5b10f90fcd935a.jpg",
+    "static/media/IMG_4169.jpg": "/static/media/IMG_4169.7e187fea4cb881b76209.jpg",
+    "static/media/IMG_4677.jpg": "/static/media/IMG_4677.1b4cf2974bc1fdce68cd.jpg",
+    "static/media/IMG_2020.jpg": "/static/media/IMG_2020.89d036a5f9e896832b0f.jpg",
+    "static/media/IMG_1188.jpg": "/static/media/IMG_1188.91ddfa950fbab305fff3.jpg",
+    "static/media/IMG_4694.jpg": "/static/media/IMG_4694.7dcd063b2450b90d2f5a.jpg",
+    "static/media/IMG_0459.jpg": "/static/media/IMG_0459.5f260a2d68176bb93e6a.jpg",
+    "static/media/IMG_1391.jpg": "/static/media/IMG_1391.a390f1a04fa9ee2d7ba7.jpg",
+    "static/media/IMG_2608.jpg": "/static/media/IMG_2608.f8ba68e300116941522f.jpg",
+    "static/media/IMG_9872.jpg": "/static/media/IMG_9872.845f7676cd5ea11e3b44.jpg",
     "static/media/running_dog_demo.mp4": "/static/media/running_dog_demo.576357f5f57ef72e4e57.mp4",
     "static/media/linux_logo.png": "/static/media/linux_logo.473b5b1180d740ee9dbd.png",
+    "static/media/IMG_2510.jpg": "/static/media/IMG_2510.efa7cd9190bc66832a3b.jpg",
+    "static/media/IMG_8799.jpg": "/static/media/IMG_8799.4117a510baa4b564dc2c.jpg",
+    "static/media/IMG_4599.jpg": "/static/media/IMG_4599.d6e360555c69498204b2.jpg",
+    "static/media/IMG_0359.jpg": "/static/media/IMG_0359.3d0be24ff3c2474fb1d1.jpg",
+    "static/media/IMG_9150.jpg": "/static/media/IMG_9150.5e94cd340729fef0c2d0.jpg",
     "static/media/voxel_rasterizer_sphere_orbit.mp4": "/static/media/voxel_rasterizer_sphere_orbit.197e344b076cfb9ef68e.mp4",
     "static/media/scikit-learn_logo.png": "/static/media/scikit-learn_logo.28100a2e0aaa199d6be7.png",
     "static/media/HTML5_logo.png": "/static/media/HTML5_logo.79f77106f2917e095928.png",
@@ -32,12 +51,12 @@
     "static/media/Javascript_logo.png": "/static/media/Javascript_logo.266bd9fb2663dcc057b4.png",
     "static/media/Java_logo.png": "/static/media/Java_logo.6c64373d3b7415758078.png",
     "index.html": "/index.html",
-    "main.ffb5115e.css.map": "/static/css/main.ffb5115e.css.map",
-    "main.80d06373.js.map": "/static/js/main.80d06373.js.map",
+    "main.24e5b18d.css.map": "/static/css/main.24e5b18d.css.map",
+    "main.f638c243.js.map": "/static/js/main.f638c243.js.map",
     "453.fa03fbbd.chunk.js.map": "/static/js/453.fa03fbbd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ffb5115e.css",
-    "static/js/main.80d06373.js"
+    "static/css/main.24e5b18d.css",
+    "static/js/main.f638c243.js"
   ]
 }
