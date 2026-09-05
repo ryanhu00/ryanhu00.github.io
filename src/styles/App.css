@@ -817,6 +817,9 @@ html.lenis body {
   --text: #f2f0ea;
   --text-muted: #b5b0a6;
   --border: rgba(242, 240, 234, 0.14);
+  --scrollbar-thumb: #5c5c5c;
+  --scrollbar-thumb-hover: #7a7a7a;
+  color-scheme: dark;
 }
 
 .photos-page .site-footer {
@@ -956,6 +959,32 @@ html.lenis body {
   pointer-events: none;
 }
 
+.photos-modal-close,
+.photos-lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(20, 20, 22, 0.72);
+  color: #f3eee6;
+  font-size: 1.45rem;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photos-modal-close:hover,
+.photos-lightbox-close:hover {
+  background: rgba(40, 40, 44, 0.9);
+  color: #fff;
+}
+
 .photos-modal-panel {
   position: relative;
   z-index: 1;
@@ -967,6 +996,34 @@ html.lenis body {
   border: 0;
   box-shadow: none;
   overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) transparent;
+  color-scheme: dark;
+}
+
+.photos-modal-panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.photos-modal-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.photos-modal-panel::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.photos-modal-panel::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.photos-modal-panel::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 .photos-grid {
@@ -1003,6 +1060,8 @@ html.lenis body {
   place-items: center;
   padding: 1.5rem;
   cursor: zoom-out;
+  touch-action: pan-y;
+  user-select: none;
 }
 
 .photos-lightbox-backdrop {
@@ -1025,6 +1084,7 @@ html.lenis body {
   border-radius: 0.75rem;
   cursor: default;
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+  pointer-events: none;
 }
 
 @media (max-width: 640px) {
@@ -1044,5 +1104,11 @@ html.lenis body {
 
   .photos-lightbox {
     padding: 0.85rem;
+  }
+
+  .photos-lightbox-close,
+  .photos-modal-close {
+    top: 0.75rem;
+    right: 0.75rem;
   }
 }

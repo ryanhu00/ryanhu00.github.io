@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../layout/Footer';
 import WebThreads from '../ui/WebThreads/WebThreads';
@@ -11,25 +11,58 @@ import rhuLogoWhite from '../../assets/rhu_logo_w.png';
 
 const Photos: React.FC = () => {
   const [activeId, setActiveId] = useState<PhotoCategoryId | null>(null);
-  const [enlargedSrc, setEnlargedSrc] = useState<string | null>(null);
+  const [enlargedIndex, setEnlargedIndex] = useState<number | null>(null);
+  const touchStartX = useRef<number | null>(null);
   const activeCategory = photoCategories.find((c) => c.id === activeId) ?? null;
+  const items = activeCategory?.items ?? [];
+  const enlargedSrc =
+    enlargedIndex !== null ? items[enlargedIndex]?.image ?? null : null;
 
-  const closeLightbox = () => setEnlargedSrc(null);
+  const closeLightbox = () => setEnlargedIndex(null);
   const closeGallery = () => {
-    setEnlargedSrc(null);
+    setEnlargedIndex(null);
     setActiveId(null);
   };
 
+  const showPrev = () => {
+    if (!items.length || enlargedIndex === null) return;
+    setEnlargedIndex((enlargedIndex - 1 + items.length) % items.length);
+  };
+
+  const showNext = () => {
+    if (!items.length || enlargedIndex === null) return;
+    setEnlargedIndex((enlargedIndex + 1) % items.length);
+  };
+
   useEffect(() => {
-    if (!activeId && !enlargedSrc) return;
+    if (!activeId && enlargedIndex === null) return;
 
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key !== 'Escape') return;
-      if (enlargedSrc) {
-        setEnlargedSrc(null);
+      if (enlargedIndex !== null) {
+        if (event.key === 'Escape') {
+          setEnlargedIndex(null);
+          return;
+        }
+        if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          setEnlargedIndex((current) => {
+            if (current === null || !items.length) return current;
+            return (current - 1 + items.length) % items.length;
+          });
+          return;
+        }
+        if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          setEnlargedIndex((current) => {
+            if (current === null || !items.length) return current;
+            return (current + 1) % items.length;
+          });
+          return;
+        }
         return;
       }
-      setActiveId(null);
+
+      if (event.key === 'Escape') setActiveId(null);
     };
 
     const previousOverflow = document.body.style.overflow;
@@ -40,7 +73,21 @@ const Photos: React.FC = () => {
       document.body.style.overflow = previousOverflow;
       window.removeEventListener('keydown', onKeyDown);
     };
-  }, [activeId, enlargedSrc]);
+  }, [activeId, enlargedIndex, items.length]);
+
+  const onTouchStart = (event: React.TouchEvent) => {
+    touchStartX.current = event.changedTouches[0]?.clientX ?? null;
+  };
+
+  const onTouchEnd = (event: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const endX = event.changedTouches[0]?.clientX ?? touchStartX.current;
+    const deltaX = endX - touchStartX.current;
+    touchStartX.current = null;
+    if (Math.abs(deltaX) < 48) return;
+    if (deltaX > 0) showPrev();
+    else showNext();
+  };
 
   return (
     <div className="app photos-page">
@@ -108,7 +155,7 @@ const Photos: React.FC = () => {
           <>
             “Nothing's perfect, the world's not perfect, but it's there for us,
             trying the best it can. That's what makes it so damn beautiful.” -
-            Fullmetal Alchemist
+            fullmetal alchemist
           </>
         }
       />
@@ -122,6 +169,17 @@ const Photos: React.FC = () => {
           onClick={closeGallery}
         >
           <div className="photos-modal-backdrop" aria-hidden="true" />
+          <button
+            type="button"
+            className="photos-modal-close"
+            aria-label="Close folder"
+            onClick={(event) => {
+              event.stopPropagation();
+              closeGallery();
+            }}
+          >
+            ×
+          </button>
           <div
             className="photos-modal-panel"
             onClick={(event) => {
@@ -132,14 +190,14 @@ const Photos: React.FC = () => {
             }}
           >
             <div className="photos-grid">
-              {activeCategory.items.map((item) => (
+              {activeCategory.items.map((item, index) => (
                 <button
                   key={item.image}
                   type="button"
                   className="photos-grid-item"
                   onClick={(event) => {
                     event.stopPropagation();
-                    setEnlargedSrc(item.image);
+                    setEnlargedIndex(index);
                   }}
                   aria-label="Enlarge photo"
                 >
@@ -158,12 +216,26 @@ const Photos: React.FC = () => {
           aria-modal="true"
           aria-label="Enlarged photo"
           onClick={closeLightbox}
+          onTouchStart={onTouchStart}
+          onTouchEnd={onTouchEnd}
         >
           <div className="photos-lightbox-backdrop" aria-hidden="true" />
+          <button
+            type="button"
+            className="photos-lightbox-close"
+            aria-label="Close photo"
+            onClick={(event) => {
+              event.stopPropagation();
+              closeLightbox();
+            }}
+          >
+            ×
+          </button>
           <img
             className="photos-lightbox-image"
             src={enlargedSrc}
             alt=""
+            draggable={false}
             onClick={(event) => event.stopPropagation()}
           />
         </div>
